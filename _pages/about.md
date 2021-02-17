@@ -4,8 +4,12 @@ title: About Me
 permalink: /about/
 ---
 
-This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
+Hi there! 
 
+My name is Kenny.
 
+I'm a computational linguist blogging to share my experiences learning from online classes like [fast.ai](https://fast.ai). 
 
-[^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
+I also plan to share blog posts centered around exploring Japanese natural language processing and various hurdles I face as work on my projects.
+
+To find more info about my work or education, please feel free to visit my []LinkedIn](https://www.linkedin.com/in/kennywlino/) page.
