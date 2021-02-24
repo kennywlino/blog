@@ -1,0 +1,10 @@
+Future blog post ideas
+
+* Satori Reader
+** Using spacy to segment the text in annotation and making it actually useful
+*** discuss interannotator agreement
+*** discuss trickiness of en vs. jp 
+* git set up between Paperspace, own repo, fastbook repo and computer
+* fast.ai learnings
+* industry structure for linguists to computer scientist
+
