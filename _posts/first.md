@@ -19,6 +19,13 @@ The same way chefs specialize in taking ingredients and cooking dishes, data sci
 
 In this post, I'm going to go over how to build a prototype of a model from start to finish thanks to fast.ai!
 
+Like recipes, it's important to break down the steps we need to take to reach the final product. 
+
+What I mean by that, is currently we have "ingredients" and what we want is -> ""cake". If you know nothing about baking, naturally combining these ingredients to make cake seems like magic, right?
+
+However, if I told you that to make this cake, I actually had one set of instructions to make the base and another to make the frosting, I bet you'd tell me that never crossed your mind!
+
+
 
 # Result
 
