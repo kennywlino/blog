@@ -4,19 +4,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Intro | kennywlino * blog</title>
+<title>Building An East Asian Image Classifier | kennywlino * blog</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Intro" />
+<meta property="og:title" content="Building An East Asian Image Classifier" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="kennywlino blogs about NLP and machine learning" />
-<meta property="og:description" content="kennywlino blogs about NLP and machine learning" />
-<link rel="canonical" href="https://kennywlino.github.io/blog/2021/02/23/cjk-classifier.html" />
-<meta property="og:url" content="https://kennywlino.github.io/blog/2021/02/23/cjk-classifier.html" />
+<meta name="description" content="Is building a machine learning model really as easy as cake?" />
+<meta property="og:description" content="Is building a machine learning model really as easy as cake?" />
+<link rel="canonical" href="https://kennywlino.github.io/blog/fastai/2021/02/23/cjk-classifier.html" />
+<meta property="og:url" content="https://kennywlino.github.io/blog/fastai/2021/02/23/cjk-classifier.html" />
 <meta property="og:site_name" content="kennywlino * blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-02-23T00:00:00-06:00" />
 <script type="application/ld+json">
-{"url":"https://kennywlino.github.io/blog/2021/02/23/cjk-classifier.html","@type":"BlogPosting","headline":"Intro","dateModified":"2021-02-23T00:00:00-06:00","datePublished":"2021-02-23T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://kennywlino.github.io/blog/2021/02/23/cjk-classifier.html"},"description":"kennywlino blogs about NLP and machine learning","@context":"https://schema.org"}</script>
+{"url":"https://kennywlino.github.io/blog/fastai/2021/02/23/cjk-classifier.html","@type":"BlogPosting","headline":"Building An East Asian Image Classifier","dateModified":"2021-02-23T00:00:00-06:00","datePublished":"2021-02-23T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://kennywlino.github.io/blog/fastai/2021/02/23/cjk-classifier.html"},"description":"Is building a machine learning model really as easy as cake?","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kennywlino.github.io/blog/feed.xml" title="kennywlino * blog" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -75,17 +75,25 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Intro</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Building An East Asian Image Classifier</h1>
+<p class="page-description">Is building a machine learning model really as easy as cake?</p>
 <p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-02-23T00:00:00-06:00" itemprop="datePublished">
         Feb 23, 2021
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      38 min read
+      37 min read
     
 </span></p>
 
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#fastai">fastai</a>
+        
+      
+      </p>
     
 
     
@@ -113,7 +121,29 @@ window.onload = wrap_img;
       </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <!--
+    <ul class="section-nav">
+<li class="toc-entry toc-h1">
+<a href="#Intro">Intro </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Gathering-Data">Gathering Data </a></li>
+<li class="toc-entry toc-h2">
+<a href="#From-Data-to-DataLoaders">From Data to DataLoaders </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Data-Augmentation">Data Augmentation </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Training-Your-Model,-and-Using-It-to-Clean-Your-Data">Training Your Model, and Using It to Clean Your Data </a></li>
+<li class="toc-entry toc-h2">
+<a href="#Turning-Your-Model-into-an-Online-Application">Turning Your Model into an Online Application </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Using-the-Model-for-Inference">Using the Model for Inference </a></li>
+<li class="toc-entry toc-h3"><a href="#Creating-a-Notebook-App-from-the-Model">Creating a Notebook App from the Model </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -122,38 +152,25 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">&gt;</span> <span class="n">Is</span> <span class="n">a</span> <span class="n">program</span> <span class="n">really</span> <span class="n">going</span> <span class="n">to</span> <span class="n">be</span> <span class="n">able</span> <span class="n">to</span> <span class="n">identify</span> <span class="n">East</span> <span class="n">Asians</span> <span class="n">accurately</span><span class="err">?</span> <span class="p">:</span><span class="n">monocle_face</span><span class="p">:</span>
-
-<span class="o">-</span> <span class="n">hide</span><span class="p">:</span> <span class="n">false</span>
-<span class="o">-</span> <span class="n">toc</span><span class="p">:</span> <span class="n">true</span> 
-<span class="o">-</span> <span class="n">badges</span><span class="p">:</span> <span class="n">true</span>
-<span class="o">-</span> <span class="n">comments</span><span class="p">:</span> <span class="n">true</span>
-<span class="o">-</span> <span class="n">categories</span><span class="p">:</span> <span class="p">[</span><span class="n">fastai</span><span class="p">]</span>
-</pre></div>
-
-    </div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Intro">
+<a class="anchor" href="#Intro" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intro<a class="anchor-link" href="#Intro"> </a>
+</h1>
 </div>
 </div>
-
 </div>
-    
-
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Working in natural language processing (NLP), I've learned a lot about how technology can interact with language to create some of the world's leading products like Siri, Alexa, or Google Translate.</p>
 <p>When I tell people what my area of expertise is, I often hear statements like, "Oh, that sounds complicated", or "I could never do that". A lot of people talk about how programming seems too difficult or how anything STEM just scares them.</p>
-<p>BUT I think the same could be said for any area of expertise! I mean, I still take my car to the shop for an oil change and they say that's pretty easy <img class="emoji" title=":eyes:" alt=":eyes:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f440.png" height="20" width="20"></p>
+<p>But I think the same could be said for any area of expertise! I mean, I still take my car to the shop for an oil change and they say that's pretty easy <img class="emoji" title=":eyes:" alt=":eyes:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f440.png" height="20" width="20"></p>
 <p>Much like working on a car or cooking in the kitchen, machine learning (ML) comes with a bunch of tools ready to make your life a lot easier.</p>
-<p>The same way chefs specialize in taking ingredients and cooking dishes, data scientists specialize in taking data and building ML models.</p>
-<p>In this post, we'll take our first step towards becoming a data scientist the same way you might've started cooking -- with an Easy Bake Oven!</p>
+<p>The same way chefs specialize in taking ingredients and cooking dishes, data scientists specialize in taking data and building ML models. In the same vain that chefs can also specialize in certain types of cuisine (Italian? Desserts?), data scientists can also specialize in working with certain types of data (speech data? specific language data?) as well.</p>
+<p>So you can imagine that there's plenty of room to gain expertise and even apply your current skills when it comes to working in tech.</p>
+<p>To get us started in the "kitchen", I want to show you guys the power of cake mix! You know... the thing the makes it possible to make cake with some eggs, a lil water and oil?</p>
 
 </div>
 </div>
@@ -161,7 +178,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>[Easy Bake Oven Picture Here]</p>
+<p><img src="https://www.meijer.com/content/dam/meijer/product/0001/60/0040/99/0001600040995_4_A1C1_0600.png" alt=""></p>
 
 </div>
 </div>
@@ -169,11 +186,12 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I know that sounds ridiculous, but with the help of <a href="https://fast.ai">fast.ai</a>, building deep learning models has become as easy as pie.</p>
+<p>I know that sounds ridiculous, but cake mix can actually get you <a href="https://www.reddit.com/r/AskReddit/comments/t0ynr/throwaway_time_whats_your_secret_that_could/c4ixtgi/">pretty far</a> <img class="emoji" title=":eyes:" alt=":eyes:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f440.png" height="20" width="20"></p>
+<p>With the help of <strong><a href="https://fast.ai">fast.ai</a></strong>, building deep learning models has become just as easy!</p>
 <p>In the first two lessons, they show just how easy it is to build a model-- from gathering the data to deploying a website to have users interact with the model.</p>
 <p>So in this post, we'll replicate the work in the lesson to try and answer the following question:</p>
 <blockquote>
-<p>Can a machine learning model classify whether a person is Chinese, Japanese, or Korean?</p>
+<p>How do we build an image classifier that can decide whether a person is Chinese, Japanese, or Korean?</p>
 </blockquote>
 <p>Let's jump right into it then!</p>
 
@@ -183,7 +201,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Gathering-Data">Gathering Data<a class="anchor-link" href="#Gathering-Data"> </a>
+<h2 id="Gathering-Data">
+<a class="anchor" href="#Gathering-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gathering Data<a class="anchor-link" href="#Gathering-Data"> </a>
 </h2>
 </div>
 </div>
@@ -191,9 +210,32 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="clean">clean<a class="anchor-link" href="#clean"> </a>
-</h1>
-<p>To download images with Bing Image Search, sign up at <a href="https://azure.microsoft.com/en-us/services/cognitive-services/bing-web-search-api/">Microsoft Azure</a> for a free account. You will be given a key, which you can copy and enter in a cell as follows (replacing 'XXX' with your key and executing it):</p>
+<p>Now if fast.ai is our "cake mix" (since it'll be doing all the hard work <img class="emoji" title=":wink:" alt=":wink:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f609.png" height="20" width="20">), what are the eggs, oil, and water?
+I'm not trying to get <em>too</em> carried away with this metaphor, but what do you think we need in order to create an <em>image</em> classifier?</p>
+<p>That's right-- images! So we'll start by gathering images for each of our categories which are:</p>
+<ul>
+<li>Chinese</li>
+<li>Japanese</li>
+<li>Korean</li>
+</ul>
+<p>Now we run into the question of "how many"? That depends on number of factors like how many categories you want to classify or how accurate you need your model to be, but in this case we'll start with 150 images for each category.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To gather these images, fast.ai recommends using Bing Image Search as it provides an easy API to quickly download images. You'll need to sign up at <a href="https://azure.microsoft.com/en-us/services/cognitive-services/bing-web-search-api/">Microsoft Azure</a> and fill in the appropriate info in the code if you follow along later.</p>
+<p>There might be a way to do something similar with Google or other search engines, but this is what they provide so we'll go with it!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Below, we are installing a tool for Python called <code>bing-image-downloader</code> to help us download the images easily and importing it to get ready to use in Python.</p>
 
 </div>
 </div>
@@ -205,33 +247,17 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'AZURE_SEARCH_KEY'</span><span class="p">,</span> <span class="s1">'d8b42ffae6c84d7c8b6e74a44e82355e'</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># because changes to Bing API</span>
-
-<span class="o">!</span>pip install bing-image-downloader
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install bing-image-downloader
 <span class="kn">from</span> <span class="nn">bing_image_downloader</span> <span class="kn">import</span> <span class="n">downloader</span>
 </pre></div>
 
     </div>
 </div>
 </div>
-
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Output" data-close="Show Output"></summary>
+        <p>
+</p>
 <div class="output_wrapper">
 <div class="output">
 
@@ -249,6 +275,7 @@ Successfully installed bing-image-downloader-1.0.4
 </div>
 </div>
 
+    </details>
 </div>
     
 
@@ -274,7 +301,10 @@ Successfully installed bing-image-downloader-1.0.4
     </div>
 </div>
 </div>
-
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Output" data-close="Show Output"></summary>
+        <p>
+</p>
 <div class="output_wrapper">
 <div class="output">
 
@@ -1878,9 +1908,18 @@ Successfully installed bing-image-downloader-1.0.4
 </div>
 </div>
 
+    </details>
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After we download these images, let's double-check to make sure we actually got what we wanted.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1941,6 +1980,14 @@ Image_125.jpg  Image_17.jpg   Image_44.jpg  Image_71.jpg   Image_99.jpg
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Perfect, there's 150 images here, so let's take a look at one!</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1992,137 +2039,11 @@ Image_125.jpg  Image_17.jpg   Image_44.jpg  Image_71.jpg   Image_99.jpg
 </div>
     
 
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'east_asians'</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fns</span> <span class="o">=</span> <span class="n">get_image_files</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="n">fns</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(#450) [Path('east_asians/japanese/Image_1.jpg'),Path('east_asians/japanese/Image_2.jpg'),Path('east_asians/japanese/Image_3.jpg'),Path('east_asians/japanese/Image_4.jpg'),Path('east_asians/japanese/Image_5.jpg'),Path('east_asians/japanese/Image_6.JPG'),Path('east_asians/japanese/Image_7.JPG'),Path('east_asians/japanese/Image_8.jpg'),Path('east_asians/japanese/Image_9.jpg'),Path('east_asians/japanese/Image_10.jpg')...]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">failed</span> <span class="o">=</span> <span class="n">verify_images</span><span class="p">(</span><span class="n">fns</span><span class="p">)</span>
-<span class="n">failed</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(#0) []</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">failed</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">unlink</span><span class="p">);</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Sidebar:-Getting-Help-in-Jupyter-Notebooks">Sidebar: Getting Help in Jupyter Notebooks<a class="anchor-link" href="#Sidebar:-Getting-Help-in-Jupyter-Notebooks"> </a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="End-sidebar">End sidebar<a class="anchor-link" href="#End-sidebar"> </a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="From-Data-to-DataLoaders">From Data to DataLoaders<a class="anchor-link" href="#From-Data-to-DataLoaders"> </a>
+<h2 id="From-Data-to-DataLoaders">
+<a class="anchor" href="#From-Data-to-DataLoaders" aria-hidden="true"><span class="octicon octicon-link"></span></a>From Data to DataLoaders<a class="anchor-link" href="#From-Data-to-DataLoaders"> </a>
 </h2>
 </div>
 </div>
@@ -2307,7 +2228,8 @@ Image_125.jpg  Image_17.jpg   Image_44.jpg  Image_71.jpg   Image_99.jpg
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Data-Augmentation">Data Augmentation<a class="anchor-link" href="#Data-Augmentation"> </a>
+<h3 id="Data-Augmentation">
+<a class="anchor" href="#Data-Augmentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Augmentation<a class="anchor-link" href="#Data-Augmentation"> </a>
 </h3>
 </div>
 </div>
@@ -2350,7 +2272,8 @@ Image_125.jpg  Image_17.jpg   Image_44.jpg  Image_71.jpg   Image_99.jpg
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Training-Your-Model,-and-Using-It-to-Clean-Your-Data">Training Your Model, and Using It to Clean Your Data<a class="anchor-link" href="#Training-Your-Model,-and-Using-It-to-Clean-Your-Data"> </a>
+<h2 id="Training-Your-Model,-and-Using-It-to-Clean-Your-Data">
+<a class="anchor" href="#Training-Your-Model,-and-Using-It-to-Clean-Your-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Training Your Model, and Using It to Clean Your Data<a class="anchor-link" href="#Training-Your-Model,-and-Using-It-to-Clean-Your-Data"> </a>
 </h2>
 </div>
 </div>
@@ -2613,7 +2536,8 @@ Image_125.jpg  Image_17.jpg   Image_44.jpg  Image_71.jpg   Image_99.jpg
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Turning-Your-Model-into-an-Online-Application">Turning Your Model into an Online Application<a class="anchor-link" href="#Turning-Your-Model-into-an-Online-Application"> </a>
+<h2 id="Turning-Your-Model-into-an-Online-Application">
+<a class="anchor" href="#Turning-Your-Model-into-an-Online-Application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Turning Your Model into an Online Application<a class="anchor-link" href="#Turning-Your-Model-into-an-Online-Application"> </a>
 </h2>
 </div>
 </div>
@@ -2621,7 +2545,8 @@ Image_125.jpg  Image_17.jpg   Image_44.jpg  Image_71.jpg   Image_99.jpg
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Using-the-Model-for-Inference">Using the Model for Inference<a class="anchor-link" href="#Using-the-Model-for-Inference"> </a>
+<h3 id="Using-the-Model-for-Inference">
+<a class="anchor" href="#Using-the-Model-for-Inference" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using the Model for Inference<a class="anchor-link" href="#Using-the-Model-for-Inference"> </a>
 </h3>
 </div>
 </div>
@@ -2772,7 +2697,8 @@ Image_125.jpg  Image_17.jpg   Image_44.jpg  Image_71.jpg   Image_99.jpg
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Creating-a-Notebook-App-from-the-Model">Creating a Notebook App from the Model<a class="anchor-link" href="#Creating-a-Notebook-App-from-the-Model"> </a>
+<h3 id="Creating-a-Notebook-App-from-the-Model">
+<a class="anchor" href="#Creating-a-Notebook-App-from-the-Model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Notebook App from the Model<a class="anchor-link" href="#Creating-a-Notebook-App-from-the-Model"> </a>
 </h3>
 </div>
 </div>
@@ -2943,117 +2869,14 @@ Image_125.jpg  Image_17.jpg   Image_44.jpg  Image_71.jpg   Image_99.jpg
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Turning-Your-Notebook-into-a-Real-App">Turning Your Notebook into a Real App<a class="anchor-link" href="#Turning-Your-Notebook-into-a-Real-App"> </a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Deploying-your-app">Deploying your app<a class="anchor-link" href="#Deploying-your-app"> </a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-Avoid-Disaster">How to Avoid Disaster<a class="anchor-link" href="#How-to-Avoid-Disaster"> </a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Unforeseen-Consequences-and-Feedback-Loops">Unforeseen Consequences and Feedback Loops<a class="anchor-link" href="#Unforeseen-Consequences-and-Feedback-Loops"> </a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Get-Writing!">Get Writing!<a class="anchor-link" href="#Get-Writing!"> </a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Questionnaire">Questionnaire<a class="anchor-link" href="#Questionnaire"> </a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Provide an example of where the bear classification model might work poorly in production, due to structural or style differences in the training data.</li>
-<li>Where do text models currently have a major deficiency?</li>
-<li>What are possible negative societal implications of text generation models?</li>
-<li>In situations where a model might make mistakes, and those mistakes could be harmful, what is a good alternative to automating a process?</li>
-<li>What kind of tabular data is deep learning particularly good at?</li>
-<li>What's a key downside of directly using a deep learning model for recommendation systems?</li>
-<li>What are the steps of the Drivetrain Approach?</li>
-<li>How do the steps of the Drivetrain Approach map to a recommendation system?</li>
-<li>Create an image recognition model using data you curate, and deploy it on the web.</li>
-<li>What is <code>DataLoaders</code>?</li>
-<li>What four things do we need to tell fastai to create <code>DataLoaders</code>?</li>
-<li>What does the <code>splitter</code> parameter to <code>DataBlock</code> do?</li>
-<li>How do we ensure a random split always gives the same validation set?</li>
-<li>What letters are often used to signify the independent and dependent variables?</li>
-<li>What's the difference between the crop, pad, and squish resize approaches? When might you choose one over the others?</li>
-<li>What is data augmentation? Why is it needed?</li>
-<li>What is the difference between <code>item_tfms</code> and <code>batch_tfms</code>?</li>
-<li>What is a confusion matrix?</li>
-<li>What does <code>export</code> save?</li>
-<li>What is it called when we use a model for getting predictions, instead of training?</li>
-<li>What are IPython widgets?</li>
-<li>When might you want to use CPU for deployment? When might GPU be better?</li>
-<li>What are the downsides of deploying your app to a server, instead of to a client (or edge) device such as a phone or PC?</li>
-<li>What are three examples of problems that could occur when rolling out a bear warning system in practice?</li>
-<li>What is "out-of-domain data"?</li>
-<li>What is "domain shift"?</li>
-<li>What are the three steps in the deployment process?</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Further-Research">Further Research<a class="anchor-link" href="#Further-Research"> </a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Consider how the Drivetrain Approach maps to a project or problem you're interested in.</li>
-<li>When might it be best to avoid certain types of data augmentation?</li>
-<li>For a project you're interested in applying deep learning to, consider the thought experiment "What would happen if it went really, really well?"</li>
-<li>Start a blog, and write your first blog post. For instance, write about what you think deep learning might be useful for in a domain you're interested in.</li>
-</ol>
-
-</div>
-</div>
-</div>
 </div>
 
 
 
   </div>
-<a class="u-url" href="/blog/2021/02/23/cjk-classifier.html" hidden></a>
+<!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js" repo="kennywlino/blog" issue-term="title" label="blogpost-comment" theme="github-light" crossorigin="anonymous" async>
+</script><a class="u-url" href="/blog/fastai/2021/02/23/cjk-classifier.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
