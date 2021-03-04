@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Unix for Poets (2021) | kennywlino * blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Unix for Poets (2021)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A Jupyter Notebook walkthrough of Unix for Poets, a short guide using unix commands for text processing." />
+<meta property="og:description" content="A Jupyter Notebook walkthrough of Unix for Poets, a short guide using unix commands for text processing." />
+<link rel="canonical" href="https://kennywlino.github.io/blog/unix/2021/03/03/unix-for-poets.html" />
+<meta property="og:url" content="https://kennywlino.github.io/blog/unix/2021/03/03/unix-for-poets.html" />
+<meta property="og:site_name" content="kennywlino * blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-03-03T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"https://kennywlino.github.io/blog/unix/2021/03/03/unix-for-poets.html","@type":"BlogPosting","headline":"Unix for Poets (2021)","dateModified":"2021-03-03T00:00:00-06:00","datePublished":"2021-03-03T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://kennywlino.github.io/blog/unix/2021/03/03/unix-for-poets.html"},"description":"A Jupyter Notebook walkthrough of Unix for Poets, a short guide using unix commands for text processing.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kennywlino.github.io/blog/feed.xml" title="kennywlino * blog" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/blog/">kennywlino * blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Unix for Poets (2021)</h1>
+<p class="page-description">A Jupyter Notebook walkthrough of Unix for Poets, a short guide using unix commands for text processing.</p>
+<p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-03-03T00:00:00-06:00" itemprop="datePublished">
+        Mar 3, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      7 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#unix">unix</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/kennywlino/blog/tree/master/_notebooks/2021-03-03-unix-for-poets.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/kennywlino/blog/master?filepath=_notebooks%2F2021-03-03-unix-for-poets.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/blog/assets/badges/binder.svg" alt="Open In Binder">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/kennywlino/blog/blob/master/_notebooks/2021-03-03-unix-for-poets.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/blog/assets/badges/colab.svg" alt="Open In Colab">
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Intro">Intro </a></li>
+<li class="toc-entry toc-h1"><a href="#Short-background-on-Unix">Short background on Unix </a></li>
+<li class="toc-entry toc-h1"><a href="#Basic-Terminal-Commands">Basic Terminal Commands </a></li>
+<li class="toc-entry toc-h1"><a href="#Unix-for-Poets">Unix for Poets </a></li>
+</ul>
+<!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-03-03-unix-for-poets.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Intro">
+<a class="anchor" href="#Intro" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intro<a class="anchor-link" href="#Intro"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>These days, when people start learning how to program, they often start with Python. That's probably because it's known for being one of the easier programming languages to pick up. In fact, the <a href="https://pypl.github.io/IDE.html">PopularitY of Programming Language Index (PYPL)</a> says that Python <em>is</em> the world's most popular language!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Even though Python is a valuable Swiss Army knife, there are actually a number of tools available through the Terminal. But what's the Terminal? When you put it that way, it sounds kind of scary...</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Short-background-on-Unix">
+<a class="anchor" href="#Short-background-on-Unix" aria-hidden="true"><span class="octicon octicon-link"></span></a>Short background on Unix<a class="anchor-link" href="#Short-background-on-Unix"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/DEC_VT100_terminal_transparent.png" width="450"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
+<em>The DEC VT100, an old computer terminal</em> <a href="https://en.wikipedia.org/wiki/Computer_terminal">(from Wikipedia)</a>
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you open up the Terminal, you might see something that looks like the screen here. You might be thinking that this looks a lot like the screens hackers use-- which is actually more or less right!</p>
+<p>You see, almost all operating systems (OS) - Microsoft's systems are based off of a system called <strong>Unix</strong>. Unix was born in the early 70s at Bell Labs, which was a part of the <a href="https://en.wikipedia.org/wiki/Bell_System">Bell System</a>.</p>
+<p>The Bell System represented the group of companies that were owned by the Bell Telephone Company which became what we know today as the American Telephone and Telegraph Company, a.k.a. <strong>AT&amp;T</strong>! If you're interested in knowing more about pre-modern day tech monopolies, I would recommend reading about them <img class="emoji" title=":nerd_face:" alt=":nerd_face:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f913.png" height="20" width="20"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="https://tcn.tidbits.com/wp-content/uploads/2017/07/Path-Bar-folder-hierarchy.png" width="450"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"><img src="https://www.howtogeek.com/wp-content/uploads/2012/03/ls.png" width="450"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">GUI</td>
+<td style="text-align:center">:--:</td>
+<td style="text-align:center">TERMINAL</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Before we got to clicking around on our screens, we had to navigate using the terminal. When icons and menus -- or formally, the graphical user interface (GUI) -- came around, that made using the terminal obsolete for the everyday consumer. Or at least the type of people who spend most of their time browsing the Internet and watching videos :woozy_face:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you want to know more about Unix and its origins, check out this article from <a href="https://www.howtogeek.com/182649/htg-explains-what-is-unix/">HowToGeek</a> or everybody's favorite, <a href="https://en.wikipedia.org/wiki/Unix">Wikipedia</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Basic-Terminal-Commands">
+<a class="anchor" href="#Basic-Terminal-Commands" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Terminal Commands<a class="anchor-link" href="#Basic-Terminal-Commands"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Unix-for-Poets">
+<a class="anchor" href="#Unix-for-Poets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unix for Poets<a class="anchor-link" href="#Unix-for-Poets"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now that we know how to do some basic navigation through the terminal, let's experiment with some of the pre-installed tools.</p>
+<p>Here, we'll work with a text file to extract basic info like the total count of words, finding commonly co-occurring words (n-grams), and applying filters.</p>
+<p>To do this, we'll be following info taken from <a href="https://www.cs.upc.edu/~padro/Unixforpoets.pdf">Unix for Poets</a>. Unix for Poets is a well-known document by Kenneth Ward Church that describes how easy it is to do some of this basic text processing right in the command line.</p>
+<p>I actually was first introduced to this during my master's program and I've seen it appear in other lecturer's resources as well, so I hope this proves to be just as useful for you!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here's a small walkthrough of steps from <a href="http://www.pitt.edu/~naraehan/ling2050/lab3.html">Unix for Poets</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We'll be working with this file <a href="https://github.com/numenta/nupic.nlp-examples/tree/master/resources/text">here</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>[TODO] Add a comparison to doing the same thing in Python</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Before beginning anything, it's always a good idea to take a peek at the file.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> head ../../01_the_ugly_duckling.txt
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The Ugly Duckling.
+
+A duck made her nest under some leaves.
+She sat on the eggs to keep them warm.
+At last the eggs broke, one after the other. Little ducks came out.
+Only one egg was left. It was a very large one.
+At last it broke, and out came a big, ugly duckling.
+"What a big duckling!" said the old duck. "He does not look like us. Can he be a turkey?--We will see. If he does not like the water, he is not a duck."
+
+The next day the mother duck took her ducklings to the pond.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The next step we want to do in order to count the words is to actually <em>separate</em> them. What do I mean by that? Well, we need a way for our tools to distinguish one word from another. The easiest way here is to put each word on its own line.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To do this in bash, we'll use the translate tool, or <code>tr</code> to replace all the whitespace with a newline character. Because there are a lot of possible whitespace characters, we'll take the opposite or, the <em>complement</em> of anything that's not A-Z.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> tr -sc <span class="s1">'[A-Z][a-z]'</span> <span class="s1">'\n'</span> &lt; ../../01_the_ugly_duckling.txt
+</pre></div>
+
+    </div>
+</div>
+</div>
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Output" data-close="Show Output"></summary>
+        <p>
+</p>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The
+Ugly
+Duckling
+A
+duck
+made
+her
+nest
+under
+some
+leaves
+She
+sat
+on
+the
+eggs
+to
+keep
+them
+warm
+At
+last
+the
+eggs
+broke
+one
+after
+the
+other
+Little
+ducks
+came
+out
+Only
+one
+egg
+was
+left
+It
+was
+a
+very
+large
+one
+At
+last
+it
+broke
+and
+out
+came
+a
+big
+ugly
+duckling
+What
+a
+big
+duckling
+said
+the
+old
+duck
+He
+does
+not
+look
+like
+us
+Can
+he
+be
+a
+turkey
+We
+will
+see
+If
+he
+does
+not
+like
+the
+water
+he
+is
+not
+a
+duck
+The
+next
+day
+the
+mother
+duck
+took
+her
+ducklings
+to
+the
+pond
+Splash
+Splash
+The
+mother
+duck
+was
+in
+the
+water
+Then
+she
+called
+the
+ducklings
+to
+come
+in
+They
+all
+jumped
+in
+and
+began
+to
+swim
+The
+big
+ugly
+duckling
+swam
+too
+The
+mother
+duck
+said
+He
+is
+not
+a
+turkey
+He
+is
+my
+own
+little
+duck
+He
+will
+not
+be
+so
+ugly
+when
+he
+is
+bigger
+Then
+she
+said
+to
+the
+ducklings
+Come
+with
+me
+I
+want
+you
+to
+see
+the
+other
+ducks
+Stay
+by
+me
+and
+look
+out
+for
+the
+cat
+They
+all
+went
+into
+the
+duck
+yard
+What
+a
+noise
+the
+ducks
+made
+While
+the
+mother
+duck
+was
+eating
+a
+big
+bug
+an
+old
+duck
+bit
+the
+ugly
+duckling
+Let
+him
+alone
+said
+the
+mother
+duck
+He
+did
+not
+hurt
+you
+I
+know
+that
+said
+the
+duck
+but
+he
+is
+so
+ugly
+I
+bit
+him
+The
+next
+duck
+they
+met
+said
+You
+have
+lovely
+ducklings
+They
+are
+all
+pretty
+but
+one
+He
+is
+very
+ugly
+The
+mother
+duck
+said
+I
+know
+he
+is
+not
+pretty
+But
+he
+is
+very
+good
+Then
+she
+said
+to
+the
+ducklings
+Now
+my
+dears
+have
+a
+good
+time
+But
+the
+poor
+big
+ugly
+duckling
+did
+not
+have
+a
+good
+time
+The
+hens
+all
+bit
+him
+The
+big
+ducks
+walked
+on
+him
+The
+poor
+duckling
+was
+very
+sad
+He
+did
+not
+want
+to
+be
+so
+ugly
+But
+he
+could
+not
+help
+it
+He
+ran
+to
+hide
+under
+some
+bushes
+The
+little
+birds
+in
+the
+bushes
+were
+afraid
+and
+flew
+away
+It
+is
+all
+because
+I
+am
+so
+ugly
+said
+the
+duckling
+So
+he
+ran
+away
+At
+night
+he
+came
+to
+an
+old
+house
+The
+house
+looked
+as
+if
+it
+would
+fall
+down
+It
+was
+so
+old
+But
+the
+wind
+blew
+so
+hard
+that
+the
+duckling
+went
+into
+the
+house
+An
+old
+woman
+lived
+there
+with
+her
+cat
+and
+her
+hen
+The
+old
+woman
+said
+I
+will
+keep
+the
+duck
+I
+will
+have
+some
+eggs
+The
+next
+day
+the
+cat
+saw
+the
+duckling
+and
+began
+to
+growl
+The
+hen
+said
+Can
+you
+lay
+eggs
+The
+duckling
+said
+No
+Then
+keep
+still
+said
+the
+hen
+The
+cat
+said
+Can
+you
+growl
+No
+said
+the
+duckling
+Then
+keep
+still
+said
+the
+cat
+And
+the
+duckling
+hid
+in
+a
+corner
+The
+next
+day
+he
+went
+for
+a
+walk
+He
+saw
+a
+big
+pond
+He
+said
+I
+will
+have
+a
+good
+swim
+But
+all
+of
+the
+animals
+made
+fun
+of
+him
+He
+was
+so
+ugly
+The
+summer
+went
+by
+Then
+the
+leaves
+fell
+and
+it
+was
+very
+cold
+The
+poor
+duckling
+had
+a
+hard
+time
+It
+is
+too
+sad
+to
+tell
+what
+he
+did
+all
+winter
+At
+last
+it
+was
+spring
+The
+birds
+sang
+The
+ugly
+duckling
+was
+big
+now
+One
+day
+he
+flew
+far
+away
+Soon
+he
+saw
+three
+white
+swans
+on
+the
+lake
+He
+said
+I
+am
+going
+to
+see
+those
+birds
+I
+am
+afraid
+they
+will
+kill
+me
+for
+I
+am
+so
+ugly
+He
+put
+his
+head
+down
+to
+the
+water
+What
+did
+he
+see
+He
+saw
+himself
+in
+the
+water
+But
+he
+was
+not
+an
+ugly
+duck
+He
+was
+a
+white
+swan
+The
+other
+swans
+came
+to
+see
+him
+The
+children
+said
+Oh
+see
+the
+lovely
+swans
+The
+one
+that
+came
+last
+is
+the
+best
+And
+they
+gave
+him
+bread
+and
+cake
+It
+was
+a
+happy
+time
+for
+the
+ugly
+duckling
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+    </details>
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Yay! Now that we have every word on one line, we can do the next logical thing, which is to sort the file in ABC order.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> tr -sc <span class="s1">'[A-Z][a-z]'</span> <span class="s1">'\n'</span> &lt; <span class="s2">"../../01_the_ugly_duckling.txt"</span> <span class="p">|</span> sort <span class="p">|</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>/bin/sh: -c: line 1: syntax error: unexpected end of file
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div>
+<a class="u-url" href="/blog/unix/2021/03/03/unix-for-poets.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>kennywlino blogs about NLP and machine learning</p>
+      </div>
+    </div>
+
+    <div class="social-links">
+<ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
