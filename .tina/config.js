@@ -77,7 +77,7 @@ export default defineConfig({
           return {
             title: `Learning Journal - ${new Date().toLocaleDateString('en-ZA')}`,
             description: `Summary of top 2-3 topics today.`,
-            pubDatetime: new Date,
+            pubDatetime: new Date(),
             tags: ['learning-journal'],
             body: {
               type: 'root',
