@@ -1,23 +1,83 @@
 ---
-import type { IFrontmatter } from 'astro-boilerplate-components';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+import { getCollection } from "astro:content";
 
-import { Hero } from '@/partials/Hero';
-import { ProjectList } from '@/partials/ProjectList';
-import { RecentPosts } from '@/partials/RecentPosts';
-import Base from '@/templates/Base.astro';
-import { AppConfig } from '@/utils/AppConfig';
-import { sortByDate } from '@/utils/Posts';
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 
-const allPosts = await Astro.glob<IFrontmatter>('./posts/*.md');
-const sortedPosts = sortByDate(allPosts);
-const lastThreePosts = sortedPosts.slice(0, 3);
-
-const { title } = AppConfig;
-const { description } = AppConfig;
+const last_posts = posts.slice(0, 3);
 ---
 
-<Base head={{ title, description }}>
-  <Hero />
-  <RecentPosts postList={lastThreePosts} />
-  <ProjectList />
-</Base>
+<BaseLayout>
+
+    <div class="pb-12 mt-5">
+      <div class="flex flex-col gap-8 md:flex-row md:justify-between md:items-center">
+        <div class="w-full md:w-1/2">
+          <div class="text-xl py-1">Hello! 👋</div>
+          <div class="text-5xl font-bold">I'm Kenny W. Lino</div>
+          <div class="text-3xl py-3 font-bold">Software Engineer</div>
+          <div class="py-2">
+            <text class="text-lg sm:flex-1">
+              I'm a JavaScript developer with a passion for creating intuitive applications and tools that provide users with a memorable and positive experience. 
+              <br>
+              <br>
+              I am proficient with React, Express.js, Node.js, MongoDB, and PostgreSQL along with other popular JavaScript tools. With a background in linguistics and natural language processing, I bring analytical and communication skills that translate well into the tech space.
+            </text>
+          </div>
+          <div class="mt-8">
+            <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
+            <a href="https://github.com/manuelernestog/astro-modern-personal-website" target="_blank" class="btn btn-outline ml-5"> Get This template</a>
+          </div>
+        </div>
+        <img src="/profile.jpg" alt="profile" class="w-full rounded-3xl md:w-1/2 md:h-1/2 md:rounded-full">
+      </div>
+    </div>
+
+    <div>
+      <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    </div>
+
+    <HorizontalCard
+      title="Demo Project 1"
+      img="/post_img.webp"
+      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      url="#"
+      badge="NEW"
+    />
+    <div class="divider my-0"></div>
+    <HorizontalCard
+    title="Demo Project 2"
+    img="/post_img.webp"
+    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    url="#"
+  />
+    <div class="divider my-0"></div>
+    <HorizontalCard
+    title="Demo Project 3"
+    img="/post_img.webp"
+    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    url="#"
+    badge="FOSS"
+  />
+
+
+    <div>
+      <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+    </div>
+
+    {
+      last_posts.map((post) => (
+        <HorizontalCard
+          title={post.data.title}
+          img={post.data.heroImage}
+          desc={post.data.description}
+          url={"/blog/" + post.slug}
+          target="_self"
+        />
+        <div class="divider my-0"></div>
+      ))
+    }
+
+</BaseLayout>

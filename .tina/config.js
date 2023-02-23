@@ -13,16 +13,16 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "assets",
+      mediaRoot: "",
       publicFolder: "public",
     },
   },
   schema: {
     collections: [
       {
-        name: "post",
-        label: "Posts",
-        path: "src/pages/posts",
+        name: "blog",
+        label: "Blog",
+        path: "src/content/blog",
         fields: [
           {
             type: "string",

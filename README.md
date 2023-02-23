@@ -1,130 +1,248 @@
-# Astro Boilerplate with TypeScript and Tailwind CSS [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Ixartz)](https://twitter.com/ixartz)
+# Astro Modern Personal Website
 
-🚀 Astro Boilerplate is starter code for your blog or portfolio based on Astro
-with Tailwind CSS 3.0. ⚡️ Made with Astro, TypeScript, ESLint, Prettier,
-Tailwind CSS.
+![Astro Modern Personal Website](public/social_img.png)
 
-Clone this project and use it to create your own Astro blog. You can check the
-[Astro templates demo](https://creativedesignsguru.com/demo/astro-boilerplate/).
+Modern Personal Website Template with Project Section, CV Section, Paginated Blog, RSS Feed, SEO Friendly, Visual themes and Responsive Desing for Astro framework.
 
-## Features
+## Demo
 
-A complete Blog feature:
+View a live demo of the [Astro Modern Personal Website](https://astro-modern-personal-website.netlify.app/)
 
-- 🎈 Syntax Highlighting
-- 🤖 SEO friendly with sitemap.xml and robots.txt
-- ⚙️ RSS feed
-- 📖 Pagination
-- 🌈 Include a dark blog theme
-- ⬇️ Markdown
-- 📦 Image lazy loading
-- 💎 Responsive design
+## Installation
 
-Developer experience first:
+Run the following command in your terminal
 
-- 🔥 Astro
-- 🎨 Tailwind CSS with aspect ratio and typography plugin
-- 🎉 TypeScript
-- ✏️ ESLint compatible with .astro files
-- 🛠 Prettier compatible with .astro files
-- 🦊 Husky
-- 🚫 lint-staged
-- 🚨 Commitlint
-- 🔧 One-click deploy on Netlify (or, manual if you prefer)
-
-ESLint with:
-
-- Airbnb styled guide
-- TypeScript compatible
-- Astro compatible
-- Automatically remove unused imports
-- Import sorting
-- Tailwind CSS plugin
-
-### Philosophy
-
-- Minimal code
-- SEO-friendly
-- 🚀 Production-ready
-
-### Requirements
-
-- Node.js and npm
-
-#### Optional
-
-- [nvm](https://github.com/nvm-sh/nvm)
-- [volta](https://volta.sh/)
-
-While Astro-boilerplate should work with the latest Node version, it has been
-tested with the versions in .nvmrc & the bottom of package.json. At current
-writing, that's Node v16.15.1
-
-### Getting started
-
-Run the following command on your local environment:
-
-``` bash
-git clone --depth=1 https://github.com/ixartz/Astro-boilerplate
-cd my-project-name
+```bash
 npm install
 ```
 
-Then, you can run locally in development mode with live reload:
+Once the packages are installed you are ready to run astro. Astro comes with a built-in development server that has everything you need for project development. The astro dev command will start the local development server so that you can see your new website in action for the very first time.
 
-``` bash
+```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your favorite browser
-to see your project.
+## Tech Stack
 
-### Deploy to production (manual)
+- [Astro](https://astro.build)
+- [tailwindcss](https://tailwindcss.com/)
+- [DaisyUI](https://daisyui.com/)
 
-You can create an optimized production build with:
+## Project Strucutre
 
-```shell
-npm run build
+
+``` php
+├── src/
+│   ├── components/
+│   │   ├── cs/
+│   │   │   ├── TimeLine
+│   │   ├── BaseHead.astro
+│   │   ├── Card.astro
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
+│   │   └── HorizontalCard.jsx
+│   │   └── SideBar.jsx
+│   ├── content/
+│   │   ├── blog/
+│   │   │   ├── post1.md
+│   │   │   ├── post2.md
+│   │   │   └── post3.md
+│   │   ├── store/
+│   │   │   ├── item1.md
+│   │   │   ├── item2.md
+│   ├── layouts/
+│   │   └── BaseLayout.astro
+│   │   └── PostLayout.astro
+│   └── pages/
+│   │   ├── blog/
+│   │   │   ├── [...page].astro
+│   │   │   ├── [slug].astro
+│   │   └── cv.astro
+│   │   └── index.astro
+│   │   └── projects.astro
+│   │   └── rss.xml.js
+│   └── styles/
+│       └── global.css
+├── public/
+│   ├── favicon.svg
+│   └── social-image.png
+│   └── sprofile.jpg
+│   └── social_img.webp
+├── astro.config.mjs
+├── tailwind.config.cjs
+├── package.json
+└── tsconfig.json
 ```
 
-Now, your blog is ready to be deployed. All generated files are located at
-`dist` folder, which you can deploy the folder to any hosting service you
-prefer.
+### Components usage
 
-### Deploy to Netlify
+#### Layout Components
 
-Clone this repository on own GitHub account and deploy to Netlify:
+The `BaseHead`, `Footer`, `Header` and `SideBar` components are already included in the layout sistem. To change the website content you can edit the content of this components.
 
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ixartz/Astro-boilerplate)
+##### SideBar
 
-## 🧞 Commands
+In the Sidebar you can change the links to all your website pages.
 
-All commands are run from the root of the project, from a terminal:
+You can change your avatar shape using [mask classes](https://daisyui.com/components/mask/).
 
-| Command           | Action                                       |
-|:----------------  |:-------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3000`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
-| `npm run clean`   | Remove `./dist` folder                       |
-| `npm run lint`    | Run ESLint and report styling error          |
+The used social-icons are SVG form [BoxIcons](https://boxicons.com/) pack.
 
-### Contributions
+#### TimeLine
 
-Everyone is welcome to contribute to this project.
-Feel free to open an issue if you have question or found a bug.
+The timeline components are used to conform the CV.
 
-### Additional Checks
+```html
+<div class="time-line-container">
+  <TimeLineElement
+    title="Element Title"
+    subtitle="Subtitle"
+    desc="Description"
+  />
+  ...
+</div>
+```
 
-This README.md was linted with
-[markdownlint](https://github.com/igorshubovych/markdownlint-cli)
+#### Card & HorizontalCard
 
-### License
+```html
+<HorizontalCard title="Card Title" img="imge_url" desc="Description" url="Link
+URL" target="Optional link target (_blank default)" badge="Optional badge"
+tags={['Array','of','tags']} />
+```
 
-Licensed under the MIT License, Copyright © 2022
+#### HorizontalCard Shop Item
 
+This compoenet is already included in the Store layout of the template. In case you want to use it in other place this are the props.
+
+```html
+<HorizontalShopItem
+  title="Item Title"
+  img="imge_url"
+  desc="Item description"
+  pricing="current_price"
+  oldPricing="old_price"
+  checkoutUrl="external store checkout url"
+  badge="Optional badge"
+  details="true"
+  url="item details url"
+  custom_link="Custom link url"
+  custom_link_label="Cutom link btn label"
+  target="Optional link target (_self default)"
+/>
+```
+
+### Layouts
+
+Include `BaseLayout` in each page you add and `PostLayout` to your post pages.
+
+### Content
+
+You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/' folder, you will need add it at config.ts.
+
+#### config.ts
+Where you need to define your content collections, we define our content schemas too.
+
+#### Blog
+
+Add your `md` blog post in the `/content/blog/` folder.
+
+##### Post format
+
+Add code with this format in the top of each post file.
+
+```
 ---
+title: "Post Title"
+description: "Description"
+pubDate: "Post date format(Sep 10 2022)"
+heroImage: "Post Hero Image URL"
+---
+```
 
-Made with ♥ by [CreativeDesignsGuru](https://creativedesignsguru.com)
-[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Ixartz)](https://twitter.com/ixartz)
+### Pages
+
+#### Blog
+
+Blog uses Astro's content collection to query post's `md`.
+
+##### [page].astro
+
+The `[page].astro` is the route to work with the paginated post list. You can change there the number of items listed for each page and the pagination button labels.
+
+##### [slug].astro
+
+The `[slug].astro` is the base route for every blog post, you can customize the page layout or behaviour, by default uses `content/blog` for content collection and `PostLayout` as layout.
+
+#### Shop
+
+Add your `md` item in the `/pages/shop/` folder.
+
+##### [page].astro
+
+The `[page].astro` is the route to work with the paginated item list. You can change there the number of items listed for each page and the pagination button labels. The shop will render all `.md` files you incle inside this folder.
+
+##### Item format
+
+Add code with this format in the top of each item file.
+
+```js
+---
+title: "Demo Item 1"
+description: "Item description"
+heroImage: "Item img url"
+details: true // show or hide details btn
+custom_link_label: "Custom btn link label"
+custom_link: "Custom btn link"
+pubDate: "Sep 15 2022"
+pricing: "$15"
+oldPricing: "$25.5"
+badge: "Featured"
+checkoutUrl: "https://checkouturl.com/"
+---
+```
+
+#### Static pages
+
+The other pages inlcuded in the template are static pages. The `index` page belong to the root page. You can add your pages directly in the `/pages` folder and then add a link to that pages in the `sidebar` component.
+
+Feel free to modify the content included in the pages that the template contains or add the ones you need.
+
+### Theming
+
+For change the template theme change the `data-theme` atribute of the `<html>` tag in `BaseLayout.astro` file.
+
+You can chose among 30 themes available or create your custom theme. See themes available [here](https://daisyui.com/docs/themes/).
+
+## Sitemap
+
+The Sitemap is generated automatically when you build your website in the root of the domain. Please update the `robots.txt` file in the public folder with your site name URL for the Sitemap.
+
+## Deploy
+
+You can deploy your site on your favorite static hosting service such as Vercel, Netlify, GitHub Pages, etc.
+
+The configuration for the deployment varies depending on the platform where you are going to do it. See the [official Astro information](https://docs.astro.build/en/guides/deploy/) to deploy your website.
+
+> **⚠️ CAUTION** </br>
+> The Blog pagination of this template is implemented using dynamic route parameters in its filename and for now this format is incompatible with SSR deploy configs, so please use the default static deploy options for your deployments.
+
+## Contributing
+
+Suggestions and pull requests are welcomed! Feel free to open a discussion or an issue for a new feature request or bug.
+
+One of the best ways of contribute is to grab a [bug report o feature suggestion](https://github.com/manuelernestog/astro-modern-personal-website/issues) that has been marked `accepted` and dig in.
+
+Please be wary of working on issues *not* marked as `accepted`. Just because someone has created an issue doesn't mean we'll accept a pull request for it.
+
+## License
+
+Astro Modern Personal Website is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astro-modern-personal-website/blob/main/LICENSE) file for details.
+
+## Contributors
+
+<a href="https://github.com/manuelernestog/astro-modern-personal-website/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=manuelernestog/astro-modern-personal-website" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
