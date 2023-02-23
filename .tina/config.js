@@ -25,7 +25,7 @@ export default defineConfig({
         path: "src/content/blog",
         defaultItem: () => {
           return {
-            pubDatetime: new Date().toISOString(),
+            pubDatetime: new Date(),
             draft: true,
           }
         },
@@ -77,7 +77,7 @@ export default defineConfig({
           return {
             title: `Learning Journal - ${new Date().toLocaleDateString('en-ZA')}`,
             description: `Summary of top 2-3 topics today.`,
-            pubDatetime: new Date().toISOString(),
+            pubDatetime: new Date,
             tags: ['learning-journal'],
             body: {
               type: 'root',
@@ -179,7 +179,7 @@ export default defineConfig({
           return {
             title: `[Problem Type] - Problem Title`,
             description: `Summary of the problem.`,
-            pubDatetime: new Date().toISOString(),
+            pubDatetime: new Date(),
             tags: ['dsa', 'neetcode150'],
             body: {
               type: 'root',
