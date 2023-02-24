@@ -1,4 +1,5 @@
 import { defineConfig } from "tinacms";
+import blogCollection from './collections/blog';
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
@@ -19,26 +20,7 @@ export default defineConfig({
   },
   schema: {
     collections: [
-      {
-        name: "blog",
-        label: "Blog",
-        path: "src/content/blog",
-        fields: [
-          {
-            type: "string",
-            name: "title",
-            label: "Title",
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
-          },
-        ],
-      },
+      blogCollection
     ],
   },
 });
