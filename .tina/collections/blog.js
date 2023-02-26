@@ -2,6 +2,13 @@ export default {
   name: "blog",
   label: "Blog",
   path: "src/content/blog",
+  defaultItem: () => {
+    return {
+      pubDate: new Date(),
+      draft: true,
+      heroImage: 'public/itemPreview.png'
+    }
+  },
   fields: [
     {
       type: "string",

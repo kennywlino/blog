@@ -1,5 +1,7 @@
 import { defineConfig } from "tinacms";
 import blogCollection from './collections/blog';
+import learningJournalCollection from './collections/learning-journal';
+import dsaCollection from './collections/dsa';
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
@@ -20,7 +22,9 @@ export default defineConfig({
   },
   schema: {
     collections: [
-      blogCollection
+      blogCollection,
+      learningJournalCollection,
+      dsaCollection
     ],
   },
 });
