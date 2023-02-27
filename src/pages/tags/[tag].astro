@@ -1,19 +1,18 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import HorizontalCardGroup from "../../components/HorizontalCardGroup.astro";
+import Tags from "../../components/Tags.astro";
 import { getCollection } from "astro:content";
 
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob("../../content/blog/**/*.md");
+  const allPosts = await getCollection("blog");
 
-  const uniqueTags = [... new Set(allPosts.map(post => post.frontmatter.tags).flat())];
-
-  console.log('allPosts: ', allPosts);
-  console.log('uniqueTags: ', uniqueTags);
+  const uniqueTags = [... new Set(allPosts.map(post => post.data.tags).flat())];
 
   return uniqueTags.map(tag => {
     const filteredPosts = allPosts.filter(post => 
-      post.frontmatter.tags.includes(tag)
+      post.data.tags.includes(tag)
     );
 
     return {
@@ -25,13 +24,13 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-
-//console.log('filteredPosts: ', posts);
 ---
 
-<BaseLayout pageTitle={tag}>
-  <p>Posts tagged with {tag}</p>
-  <ul>
-    {posts.map(post => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
-  </ul>
+<BaseLayout title={tag}>
+  <div class="flex justify-center">
+    <h2 class="prose-2xl font-bold">Tags</h2>
+  </div>
+  <Tags />
+  <div class="divider mt-4 mb-0" />
+  <HorizontalCardGroup data={posts} />
 </BaseLayout>
