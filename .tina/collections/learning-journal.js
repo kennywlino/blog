@@ -3,7 +3,7 @@ import blogCollection from './blog.js';
 const learningJournal = {
   name: "learning_journal",
   label: "Learning Journal",
-  path: "src/content/learning-journal",
+  path: "src/content/blog/learning-journal",
   defaultItem: () => {
     return {
       title: `Learning Journal - ${new Date().toLocaleDateString('en-ZA')}`,

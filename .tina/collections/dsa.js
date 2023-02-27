@@ -3,7 +3,7 @@ import blogCollection from './blog.js';
 const learningJournal = {
   name: "dsa",
   label: "Data Structures & Algorithms",
-  path: "src/content/dsa",
+  path: "src/content/blog/dsa",
   defaultItem: () => {
     return {
       title: `[Problem Type] - Problem Title`,
