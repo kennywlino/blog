@@ -30,7 +30,7 @@ const { posts } = Astro.props;
   <div class="flex justify-center">
     <h2 class="prose-2xl font-bold">Tags</h2>
   </div>
-  <Tags />
+  <Tags selected={tag}/>
   <div class="divider mt-4 mb-0" />
   <HorizontalCardGroup data={posts} />
 </BaseLayout>
