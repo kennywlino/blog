@@ -1,53 +1,36 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
-import Layout from "@layouts/Layout.astro";
-import Main from "@layouts/Main.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import Card from "@components/Card";
-import getUniqueTags from "@utils/getUniqueTags";
-import getPostsByTag from "@utils/getPostsByTag";
-import slugify from "@utils/slugify";
-import { SITE } from "@config";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import HorizontalCardGroup from "../../components/HorizontalCardGroup.astro";
+import Tags from "../../components/Tags.astro";
+import { getCollection } from "astro:content";
 
-export interface Props {
-  post: CollectionEntry<"blog">;
-  tag: string;
-}
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const allPosts = await getCollection("blog");
 
-  const tags = getUniqueTags(posts);
+  const uniqueTags = [... new Set(allPosts.map(post => post.data.tags).flat())];
 
-  return tags.map(tag => {
+  return uniqueTags.map(tag => {
+    const filteredPosts = allPosts.filter(post => 
+      post.data.tags.includes(tag)
+    );
+
     return {
       params: { tag },
-      props: { tag },
+      props: { posts: filteredPosts },
     };
   });
 }
 
-const { tag } = Astro.props;
-
-const posts = await getCollection("blog", ({ data }) => !data.draft);
-
-const tagPosts = getPostsByTag(posts, tag);
+const { tag } = Astro.params;
+const { posts } = Astro.props;
 ---
 
-<Layout title={`Tag:${tag} | ${SITE.title}`}>
-  <Header activeNav="tags" />
-  <Main
-    pageTitle={`Tag:${tag}`}
-    pageDesc={`All the articles with the tag "${tag}".`}
-  >
-    <ul>
-      {
-        tagPosts.map(({ data }) => (
-          <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
-        ))
-      }
-    </ul>
-  </Main>
-  <Footer />
-</Layout>
+<BaseLayout title={tag}>
+  <div class="flex justify-center">
+    <h2 class="prose-2xl font-bold">Tags</h2>
+  </div>
+  <Tags selected={tag}/>
+  <div class="divider mt-4 mb-0" />
+  <HorizontalCardGroup data={posts} />
+</BaseLayout>

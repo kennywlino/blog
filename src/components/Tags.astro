@@ -1,0 +1,27 @@
+---
+const allPosts = await Astro.glob("../content/blog/**/*.md");
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+const { selected } = Astro.props;
+---
+
+<div class="flex flex-wrap my-0 mx-auto justify-center">
+  {
+    tags.map((tag) => {
+      if (tag === selected) {
+        return (
+          <div class="btn btn-sm btn-secondary m-2 hover:btn-ghost">
+            <a href={`/tags/${tag}`}>{tag}</a>
+          </div>
+        );
+      }
+      else {
+        return (
+          <div class="btn btn-sm m-2 hover:btn-secondary">
+            <a href={`/tags/${tag}`}>{tag}</a>
+          </div>
+        );
+      } 
+    })
+  }
+  
+</div>

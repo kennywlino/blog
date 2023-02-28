@@ -1,0 +1,21 @@
+---
+import HorizontalCard from "./HorizontalCard.astro";
+const { data } = Astro.props;
+---
+
+<ul>
+  {
+    data.map((post) => (
+      <>
+        <HorizontalCard
+          title={post.data.title}
+          img={post.data.heroImage}
+          desc={post.data.description}
+          url={"/blog/" + post.slug}
+          target="_self"
+        />
+        <div class="divider my-0" />
+      </>
+    ))
+  }
+</ul>
