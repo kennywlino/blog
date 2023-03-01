@@ -8,7 +8,7 @@ const learningJournal = {
     return {
       title: `Learning Journal - ${new Date().toLocaleDateString('en-ZA')}`,
       description: `Summary of top 2-3 topics today.`,
-      heroImage: 'public/itemPreview.png',
+      heroImage: 'itemPreview.png',
       tags: ['learning-journal'],
       body: {
         type: 'root',

@@ -8,7 +8,7 @@ const learningJournal = {
     return {
       title: `[Problem Type] - Problem Title`,
       description: `Summary of the problem.`,
-      heroImage: 'public/itemPreview.png',
+      heroImage: 'itemPreview.png',
       tags: ['dsa', 'neetcode150'],
       body: {
         type: 'root',

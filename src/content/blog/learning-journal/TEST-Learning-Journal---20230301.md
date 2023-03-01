@@ -2,7 +2,7 @@
 title: '[TEST] Learning Journal - 2023/03/01'
 description: Summary of top 2-3 topics today.
 pubDate: '2023-03-01T08:00:00.000Z'
-heroImage: public/itemPreview.png
+heroImage: /post_img.webp
 tags:
   - learning-journal
 ---

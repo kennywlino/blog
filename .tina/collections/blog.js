@@ -5,7 +5,7 @@ export default {
   defaultItem: () => {
     return {
       draft: true,
-      heroImage: 'public/itemPreview.png'
+      heroImage: 'itemPreview.png'
     }
   },
   fields: [

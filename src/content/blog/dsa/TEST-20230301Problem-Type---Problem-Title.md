@@ -2,7 +2,7 @@
 title: '[TEST 2023/03/01][Problem Type] - Problem Title'
 description: Summary of the problem.
 pubDate: '2023-03-01T08:00:00.000Z'
-heroImage: public/itemPreview.png
+heroImage: /post_img.webp
 tags:
   - dsa
   - neetcode150
