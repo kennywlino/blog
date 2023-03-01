@@ -18,15 +18,6 @@ const learningJournal = {
             children: [
               {
                 type: 'text',
-                text: 'What was your goal today? Did you accomplish it, and if not, what can you do differently next time?',
-              },
-            ],
-          },
-          {
-            type: 'h2',
-            children: [
-              {
-                type: 'text',
                 text: 'What did you learn or work on today? How does it tie into your goals?',
               },
             ],

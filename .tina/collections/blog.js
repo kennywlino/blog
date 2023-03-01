@@ -8,6 +8,13 @@ export default {
       heroImage: 'itemPreview.png'
     }
   },
+  ui: {
+    filename: {
+      slugify: values => {
+        return `${values.title.toLowerCase().replace(/[^0-9a-z]+/gi, '-').replace(/-+/g, "-")}`
+      },
+    },
+  },
   fields: [
     {
       type: "string",
