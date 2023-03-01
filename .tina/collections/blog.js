@@ -4,7 +4,6 @@ export default {
   path: "src/content/blog",
   defaultItem: () => {
     return {
-      pubDate: new Date(),
       draft: true,
       heroImage: 'public/itemPreview.png'
     }
@@ -33,6 +32,7 @@ export default {
       type: "string",
       name: "heroImage",
       label: "Hero Image",
+      required: false,
     },
     {
       type: "string",
@@ -45,6 +45,7 @@ export default {
       type: "boolean",
       name: "draft",
       label: "Draft?",
+      required: false,
     },
     {
       type: "rich-text",
