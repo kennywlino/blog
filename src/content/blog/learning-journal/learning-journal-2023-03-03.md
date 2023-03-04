@@ -28,3 +28,5 @@ I'm a little bit curious about how to make my front-end layout snap to each sect
 Since I wanted to get better with TailwindCSS and styling the front-end overall, I also was considering some small animations I could add to the PicMySong project to have a more unique touch. I had seen example layouts with blurry colors in the background, and when I was reading through a discussion on one of the tech subreddits I peruse occasionally, I saw someone point to this tutorial from TailwindCSS on YouTube: [Building Blurry, Animated Background Shapes with Tailwind CSS](https://www.youtube.com/watch?v=Tmkr2kKUEgU "").
 
 ## What do you plan to work on tomorrow?
+
+Tomorrow, I'd like to work on seeing if I can clean up the back-end a little more by organizing the helper functions and routes better. I also would like to add some tests in order to rely on automated testing instead of having to manual run checks. I also plan on incorporating the scroll snap I was discussing, as well as seeing how I can get the drag-and-drop to work for the image upload if possible. 
