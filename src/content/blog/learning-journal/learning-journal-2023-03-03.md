@@ -1,6 +1,8 @@
 ---
 title: Learning Journal - 2023/03/03
-description: Summary of top 2-3 topics today.
+description: >-
+  Updated PicMySong image upload component to be a dropzone. Worked on
+  readjusting get labels function on back-end to better suit music search later.
 pubDate: '2023-03-03T08:00:00.000Z'
 heroImage: itemPreview.png
 tags:
@@ -29,4 +31,4 @@ Since I wanted to get better with TailwindCSS and styling the front-end overall,
 
 ## What do you plan to work on tomorrow?
 
-Tomorrow, I'd like to work on seeing if I can clean up the back-end a little more by organizing the helper functions and routes better. I also would like to add some tests in order to rely on automated testing instead of having to manual run checks. I also plan on incorporating the scroll snap I was discussing, as well as seeing how I can get the drag-and-drop to work for the image upload if possible. 
+Tomorrow, I'd like to work on seeing if I can clean up the back-end a little more by organizing the helper functions and routes better. I also would like to add some tests in order to rely on automated testing instead of having to manual run checks. I also plan on incorporating the scroll snap I was discussing, as well as seeing how I can get the drag-and-drop to work for the image upload if possible.
