@@ -11,7 +11,7 @@ export default {
   ui: {
     filename: {
       slugify: values => {
-        return `${values.title.toLowerCase().replace(/[^0-9a-z]+/gi, '-').replace(/-+/g, "-")}`
+        return `${values?.title?.toLowerCase().replace(/[^0-9a-z]+/gi, '-').replace(/-+/g, "-")}`
       },
     },
   },
