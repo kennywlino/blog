@@ -34,3 +34,5 @@ Something that was on my mind today is how I could make the `getSongs()` functio
 I'd like to figure out how to get more variation for the user so that they're not limited to one word or concept for the image they gave, especially since they say "An image is worth a thousand words".
 
 ## What do you plan to work on tomorrow?
+
+Tomorrow, I plan on striving towards getting an MVP version of PicMySong where the hero, search, and search results are adequately displayed. From there, I'd like to plan towards adding some additional features I have in mind, like adding an option for users to have general CRUD functionality for the app as an ode to the original PicMySong we built for my bootcamp course. Then, we were asked to use APIs and make sure that our apps include CRUD, and since this is a rebuild more or less, it makes sense to include it.
