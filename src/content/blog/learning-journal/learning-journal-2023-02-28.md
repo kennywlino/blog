@@ -4,7 +4,7 @@ description: >-
   Spent time trying to implement TinaCMS' contextual editing. Found a bug with
   saving files via Tina editor so switched gears.
 pubDate: '2023-02-28T08:00:00.000Z'
-heroImage: itemPreview.png
+heroImage: '' 
 tags:
   - learning-journal
 ---

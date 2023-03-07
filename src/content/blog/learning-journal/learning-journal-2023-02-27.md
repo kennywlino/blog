@@ -2,7 +2,7 @@
 title: Learning Journal - 2023/02/27
 description: Summary of top 2-3 topics today.
 pubDate: '2023-02-27T08:00:00.000Z'
-heroImage: /itemPreview.png
+heroImage: '' 
 tags:
   - learning-journal
 ---
