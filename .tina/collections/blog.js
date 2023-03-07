@@ -4,10 +4,16 @@ export default {
   path: "src/content/blog",
   defaultItem: () => {
     return {
-      pubDate: new Date(),
       draft: true,
-      heroImage: 'public/itemPreview.png'
+      heroImage: 'itemPreview.png'
     }
+  },
+  ui: {
+    filename: {
+      slugify: values => {
+        return `${values?.title?.toLowerCase().replace(/[^0-9a-z]+/gi, '-').replace(/-+/g, "-")}`
+      },
+    },
   },
   fields: [
     {
@@ -33,6 +39,7 @@ export default {
       type: "string",
       name: "heroImage",
       label: "Hero Image",
+      required: false,
     },
     {
       type: "string",
@@ -45,6 +52,7 @@ export default {
       type: "boolean",
       name: "draft",
       label: "Draft?",
+      required: false,
     },
     {
       type: "rich-text",
