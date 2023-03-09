@@ -1,6 +1,8 @@
 ---
 title: Learning Journal - 2023/03/08
-description: Summary of top 2-3 topics today.
+description: >-
+  First animation today with Three.js. Added more styling to PicMySong with
+  icons, etc.
 pubDate: '2023-03-08T08:00:00.000Z'
 heroImage: itemPreview.png
 tags:
@@ -39,8 +41,6 @@ Today, I learned a bit more about:
 
 * [The Noun Project](https://thenounproject.com/ "") - has over 5 million icons available
 * [Icons8](https://icons8.com/ "")
-
-## What are some things you're still curious about?
 
 ## What do you plan to work on tomorrow?
 
