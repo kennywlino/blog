@@ -4,7 +4,7 @@ description: >-
   Finally got the AWS Rekognition API set-up and working. Learned about Multer,
   an express middleware for handling files.
 pubDate: '2023-02-21T08:00:00.000Z'
-heroImage: '' 
+heroImage: "/assets/notebook.png"
 tags:
   - learning-journal
 ---

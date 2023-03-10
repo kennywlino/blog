@@ -5,7 +5,7 @@ description: >-
   with Astro. Attempted to start using TypeScript but ran into a lot of initial
   type errors.
 pubDate: '2023-02-17T08:00:00.000Z'
-heroImage: '' 
+heroImage: "/assets/notebook.png"
 tags:
   - learning-journal
 ---

@@ -1,32 +1,36 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import HorizontalCard from "../../components/HorizontalCard.astro";
-import HorizontalCardGroup from "../../components/HorizontalCardGroup.astro";
-import Tags from "../../components/Tags.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import HorizontalCardGroup from "../../../components/HorizontalCardGroup.astro";
+import Tags from "../../../components/Tags.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths({ paginate }) {
   const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  const uniqueTags = [... new Set(posts.map(post => post.data.tags).flat())];
 
-
-  return paginate(posts, { pageSize: 10 });
+  // For every tag, return a paginate() result.
+  // Make sure that you pass `{params: {tag}}` to `paginate()`
+  // so that Astro knows which tag grouping the result is for.
+  return uniqueTags.map((tag) => {
+    // const filteredPosts = posts.filter((post) => post.frontmatter.tag === tag);
+    return paginate(posts, {
+      params: { tag },
+      pageSize: 10
+    });
+  });
 }
-
 const { page } = Astro.props;
+const params = Astro.params;
 ---
 
-<BaseLayout title="Blog">
+<BaseLayout title={params.tag}>
   <div class="flex justify-center">
     <h2 class="prose-2xl font-bold">Tags</h2>
   </div>
-
-  <Tags />
+  <Tags selected={params.tag}/>
   <div class="divider mt-4 mb-0" />
- 
   <HorizontalCardGroup data={page.data} />
-
   <div class="flex justify-between">
     {
       page.url.prev ? (

@@ -5,7 +5,7 @@
   "version": "2.1.1",
   "private": true,
   "scripts": {
-    "dev": "tinacms dev -c \"astro dev\"",
+    "dev": "tinacms dev -c \"astro dev --host\"",
     "start": "tinacms dev -c \"astro dev\"",
     "build": "tinacms build && astro build",
     "preview": "astro preview",

@@ -4,7 +4,7 @@ description: >-
   Updated PicMySong image upload component to be a dropzone. Worked on
   readjusting get labels function on back-end to better suit music search later.
 pubDate: '2023-03-03T08:00:00.000Z'
-heroImage: '' 
+heroImage: "/assets/notebook.png"
 tags:
   - learning-journal
 ---
