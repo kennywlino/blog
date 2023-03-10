@@ -4,8 +4,9 @@ export default {
   path: "src/content/blog",
   defaultItem: () => {
     return {
-      draft: true,
-      heroImage: 'itemPreview.png'
+      pubDate: new Date().toString(),
+      draft: false,
+      heroImage: ''
     }
   },
   ui: {
