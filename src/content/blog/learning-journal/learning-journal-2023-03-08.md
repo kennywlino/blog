@@ -4,7 +4,7 @@ description: >-
   First animation today with Three.js. Added more styling to PicMySong with
   icons, etc.
 pubDate: '2023-03-08T08:00:00.000Z'
-heroImage: '' 
+heroImage: "/assets/notebook.png"
 tags:
   - learning-journal
 ---

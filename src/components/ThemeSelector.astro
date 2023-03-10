@@ -12,6 +12,12 @@
 <script>
   const theme = window.localStorage.getItem("data-theme");
 
+  if (theme) {
+    updateTheme(theme);
+  } else {
+    updateTheme("fantasy");
+  }
+
   const themeSelector = document.getElementById("theme-selector");
   themeSelector?.addEventListener("click", () => {
     const currentTheme = document.querySelector("html")?.getAttribute("data-theme"); 
@@ -20,10 +26,18 @@
     } else {
       updateTheme('fantasy');
     }
+
+
   });
 
   function updateTheme(newTheme) {
     document.querySelector("html")?.setAttribute("data-theme", newTheme);
     window.localStorage.setItem("data-theme", newTheme);
+    const themeSelector = document.getElementById("theme-selector");
+    if (newTheme === "fantasy") {
+      themeSelector.checked = false;
+    } else {
+      themeSelector.checked = true;
+    }
   }
 </script>
