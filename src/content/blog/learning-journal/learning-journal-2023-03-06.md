@@ -2,7 +2,7 @@
 title: Learning Journal - 2023/03/06
 description: Summary of top 2-3 topics today.
 pubDate: '2023-03-06T08:00:00.000Z'
-heroImage: ''''''
+heroImage: '' 
 tags:
   - learning-journal
 ---

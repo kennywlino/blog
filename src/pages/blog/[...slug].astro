@@ -4,21 +4,16 @@ import { BlogSchema } from '../../content/config';
 import PostLayout from '../../layouts/PostLayout.astro';
 
 export async function getStaticPaths() {
-
-    // console.log('postsResponse:' , postsResponse);
-
-    // const posts = postsResponse.data.blogConnection.edges.map(post => {
-    //     let postSlug = post?.node?._sys.path;
-    //     postSlug = postSlug.replace("src/content/blog", "")
-    //                     .replace(/\.[^/.]+$/, "");
-    //     console.log('postSlug: ', postSlug);
-    //     return { slug: postSlug };
-    // });
-
-    const postEntries = await getCollection('blog');
-    return postEntries.map(entry => ({ 
-        params: { slug: entry.slug }, props: { entry },
-    }));
+    // const postEntries = await getCollection('blog');
+    const postEntries = await getCollection('blog', ({ id }) => {
+        const fileExt = id.split('.').pop();
+        return fileExt === 'md';
+    });
+    return postEntries.map(entry => {
+        return ({ 
+            params: { slug: entry.slug }, props: { entry },
+            }); 
+    });
 }
 
 interface Props {
