@@ -6,7 +6,7 @@ import Tags from "../../components/Tags.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths({ paginate }) {
-  const posts = (await getCollection('blog', ({ data }) => {
+  const posts = (await getCollection('projects', ({ data }) => {
     return data.draft === false;
   })).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -21,13 +21,13 @@ const { page } = Astro.props;
 
 <BaseLayout title="Blog">
   <div class="flex justify-center">
-    <h2 class="prose-2xl font-bold">Tags</h2>
+    <h2 class="prose-2xl font-bold">Projects</h2>
   </div>
 
   <Tags />
   <div class="divider mt-4 mb-0" />
  
-  <HorizontalCardGroup data={page.data} collection="blog" fillColor="primary"/>
+  <HorizontalCardGroup data={page.data} collection="projects" fillColor="primary"/>
 
   <div class="flex justify-between">
     {

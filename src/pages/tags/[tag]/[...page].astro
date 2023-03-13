@@ -5,8 +5,11 @@ import Tags from "../../../components/Tags.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths({ paginate }) {
-  const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  const posts = (await getCollection('blog', ({ data }) => {
+    return data.draft === false;
+  })).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
   const uniqueTags = [... new Set(posts.map(post => post.data.tags).flat())];
 
   // For every tag, return a paginate() result.

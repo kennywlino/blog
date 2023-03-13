@@ -8,6 +8,7 @@ pubDate: '2023-03-10T07:24:09.000Z'
 heroImage: src/icons/notebook.svg
 tags:
   - learning-journal
+draft: false
 ---
 
 ## What did you learn or work on today? How does it tie into your goals?
@@ -16,7 +17,7 @@ Today, all of my attention went to tidying up this personal page since it's due 
 
 I also did some readjusting of the display of images with my learning journals as the original set-up was a full-size image for each page. Instead, I replaced them with just smaller icons of a notebook to better suit my own personal style.
 
-Finally, I also added pagination to the tags page. For the tags page, it is set-up to be able to view all of the posts under the blog and also filter by tag. However, since the tags are also dynamic, it was tricky figuring out how to get Astro to handle it. I knew that Astro likes files that will become dynamic paths to use the `[file].astro` or `[...file].astro` format. However, I couldn't quite figure out how this would work with the tagging system since both the tags and the page numbers would be dynamic. Luckily, Astro includes a great example of nested pagination in their documentation: [Astro Nested Pagination](https://docs.astro.build/en/core-concepts/routing/#nested-pagination "")
+Finally, I also added pagination to the tags page. For the tags page, it is set-up to be able to view all of the posts under the blog and also filter by tag. However, since the tags are also dynamic, it was tricky figuring out how to get Astro to handle it. I knew that Astro likes files that will become dynamic paths to use the `[file].astro` or `[...file].astro` format. However, I couldn't quite figure out how this would work with the tagging system since both the tags and the page numbers would be dynamic. Luckily, Astro includes a great example of nested pagination in their documentation: [Astro Nested Pagination](https://docs.astro.build/en/core-concepts/routing/#nested-pagination)
 
 ## What are some things you'd like to make special note of?
 

@@ -7,11 +7,12 @@ pubDate: '2023-02-27T08:00:00.000Z'
 heroImage: /src/icons/notebook.svg
 tags:
   - learning-journal
+draft: false
 ---
 
 ## What did you learn or work on today? How does it tie into your goals?
 
-Today, I worked on implementing tags within my blog so I can tag posts with them and filter posts by tag. This wasn't too bad as there's an article  [Generate tag pages](https://docs.astro.build/en/tutorial/5-astro-api/2/ "") in the Astro docs that walks you through the process.
+Today, I worked on implementing tags within my blog so I can tag posts with them and filter posts by tag. This wasn't too bad as there's an article  [Generate tag pages](https://docs.astro.build/en/tutorial/5-astro-api/2/) in the Astro docs that walks you through the process.
 
 After following this documentation, I also spent time adding a component to create buttons for each of the tags which redirect to a page with all of the blog posts tagged with the relevant tag. This was slightly interesting since in plain React, we could filter the blog posts and trigger a re-render on-click of the tag buttons, but since Astro encourages static pages, this just redirected to a new URL.
 
@@ -51,7 +52,7 @@ export async function getStaticPaths() {
 Later, I ran into the same error with a route pattern being matched but no matching static path. This time, it was when
 I was trying to generate the static paths for my blog posts. I noticed that the static paths worked fine for content at the top level of my `src/content/blog` folder, but didn't work for my `dsa` and `learning-journal` folders nested inside.
 
-This was tricky to solve as the solution wasn't the same as before, but I noticed that there were dynamic routes that used the `[param].astro` convention vs. `[...param].astro`convention. I got curious about why, and when I looked this up in the Astro docs, I found this part about [Rest parameters](https://docs.astro.build/en/core-concepts/routing/#rest-parameters "") that allows Astro to match file paths of *any depth* with the `[...param]`convention as opposed to one level like `[param].astro`.  When I tested this out, my links to my DS\&A posts and  learning journals worked fine again.
+This was tricky to solve as the solution wasn't the same as before, but I noticed that there were dynamic routes that used the `[param].astro` convention vs. `[...param].astro`convention. I got curious about why, and when I looked this up in the Astro docs, I found this part about [Rest parameters](https://docs.astro.build/en/core-concepts/routing/#rest-parameters) that allows Astro to match file paths of *any depth* with the `[...param]`convention as opposed to one level like `[param].astro`.  When I tested this out, my links to my DS\&A posts and  learning journals worked fine again.
 
 Simply put, reading and digging through the documentation really helped me solved my issues. In a way, I think it's just the natural progression of getting familiar with new tools-- much like a chef or a baker getting familiar with a new recipe and taking time to understand the process until they can cook it without hardly looking at the recipe card.
 

@@ -53,7 +53,7 @@ export default {
       type: "boolean",
       name: "draft",
       label: "Draft?",
-      required: false,
+      required: true,
     },
     {
       type: "rich-text",

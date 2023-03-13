@@ -7,6 +7,7 @@ pubDate: '2023-03-08T08:00:00.000Z'
 heroImage: "/src/icons/notebook.svg"
 tags:
   - learning-journal
+draft: false
 ---
 
 ## What did you learn or work on today? How does it tie into your goals?
@@ -39,8 +40,8 @@ What I'd like to make note of today are all the numerous icon and asset websites
 
 Today, I learned a bit more about:
 
-* [The Noun Project](https://thenounproject.com/ "") - has over 5 million icons available
-* [Icons8](https://icons8.com/ "")
+* [The Noun Project](https://thenounproject.com/) - has over 5 million icons available
+* [Icons8](https://icons8.com/)
 
 ## What do you plan to work on tomorrow?
 

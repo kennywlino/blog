@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon';
 import path from "path";
 
-const { title, img, desc, url, badge, tags, target = '_blank' } = Astro.props;
+const { title, img, desc, url, badge, tags, target, fillColor = '_blank' } = Astro.props;
 
 let imgName;
 let imgType;
@@ -16,7 +16,7 @@ if (img) {
   <a href={url} target={target}>
     <div class="hero-content flex-col md:flex-row">
       {imgType !== '.svg' && <img src={img} alt={title} class="max-h-20 rounded-lg" />}
-      {imgType === '.svg' && <Icon name={imgName} class="fill-secondary max-h-24" />}
+      {imgType === '.svg' && <Icon name={imgName} class={`fill-${fillColor} max-h-24`} />}
       <div class="grow w-full">
         <h1 class="text-xl font-bold">
           {title}

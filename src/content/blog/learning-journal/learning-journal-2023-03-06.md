@@ -7,6 +7,7 @@ pubDate: '2023-03-06T08:00:00.000Z'
 heroImage: /src/icons/notebook.svg
 tags:
   - learning-journal
+draft: false
 ---
 
 ## What did you learn or work on today? How does it tie into your goals?
@@ -27,7 +28,7 @@ Invalid or incomplete introspection result. Ensure that you are passing "data" p
 
 ## What are some things you'd like to make special note of?
 
-For the back-end, instead of CommonJS, I've been using ES6 syntax such as imports since I wanted a bit more consistency in the syntax I used on both ends. I learned from this [Stack Overflow question](https://stackoverflow.com/questions/71009393/why-is-default-required-in-importing-json-file-in-js-code "") something new about importing JSON files, which is that while they can be imported using `import * as data from './data.json'`, doing so will 'wrap' the data in a 'default' object since it is being imported as a module, much like 'export default'. Instead, we can use `import { default as data } from './data.json'`. I also had to add `assert { type: 'json' }` to import the json.
+For the back-end, instead of CommonJS, I've been using ES6 syntax such as imports since I wanted a bit more consistency in the syntax I used on both ends. I learned from this [Stack Overflow question](https://stackoverflow.com/questions/71009393/why-is-default-required-in-importing-json-file-in-js-code) something new about importing JSON files, which is that while they can be imported using `import * as data from './data.json'`, doing so will 'wrap' the data in a 'default' object since it is being imported as a module, much like 'export default'. Instead, we can use `import { default as data } from './data.json'`. I also had to add `assert { type: 'json' }` to import the json.
 
 ## What are some things you're still curious about?
 

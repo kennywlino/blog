@@ -7,14 +7,15 @@ pubDate: '2023-03-07T08:00:00.000Z'
 heroImage: "/src/icons/notebook.svg"
 tags:
   - learning-journal
+draft: false  
 ---
 
 ## What did you learn or work on today? How does it tie into your goals?
 
 Today, I continued work on PicMySong by adjusting the Results component I defined to display the uploaded image and the results from the Spotify API search. For some reason, figuring out what data type the image needed to be in in order for me to be able to render it took me a bit to understand since I saw suggestions to use the `FileReader` object and its `readAsDataUrl()` function, while some others also mentioned using `URL.createObjectURL()`. I think part of the issue was also coming from TypeScript, as I had originally defined the type for the image in the Results component's prop object.
 
-I also took the time to start Bruno Simon's [Three.js Journey](https://threejs-journey.com "") course.
-I purchased this course about 3-4 months ago around Black Friday, but because I was busy focused on learning more of the fundamentals during my coding bootcamp, I left this for when I would have a more flexible schedule. Although I have a long list of things I'm curious to learn about, like TypeScript and AWS, ultimately I'd like to find some space to priortize my creative energy. I became curious about this realm of tech when I first saw [Awwwards](https://www.awwwards.com/ ""), which is a website that showcases and celebrates some of the best web design in the world. This led me down a rabbit hole of highly interactive websites, and eventually Three.js. Simply put, Three.js is a tool that allows us to create 3D experiences in a web application.
+I also took the time to start Bruno Simon's [Three.js Journey](https://threejs-journey.com) course.
+I purchased this course about 3-4 months ago around Black Friday, but because I was busy focused on learning more of the fundamentals during my coding bootcamp, I left this for when I would have a more flexible schedule. Although I have a long list of things I'm curious to learn about, like TypeScript and AWS, ultimately I'd like to find some space to priortize my creative energy. I became curious about this realm of tech when I first saw [Awwwards](https://www.awwwards.com/), which is a website that showcases and celebrates some of the best web design in the world. This led me down a rabbit hole of highly interactive websites, and eventually Three.js. Simply put, Three.js is a tool that allows us to create 3D experiences in a web application.
 
 While I'd like to still maintain room for proper full-stack development, I'm excited to incorporate and gain skills as a creative developer as well.
 

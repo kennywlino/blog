@@ -7,6 +7,7 @@ pubDate: '2023-02-21T08:00:00.000Z'
 heroImage: "/src/icons/notebook.svg"
 tags:
   - learning-journal
+draft: false
 ---
 
 ## What was your goal today? (i.e . time spent studying, or improving certain skills) Did you accomplish it, and if not, what can you do differently next time?
@@ -21,7 +22,7 @@ As for my blog, I thought I would just revert back to using my old Hugo set-up, 
 
 Today, I learned about a couple of new things, one which was Multer, an Express middleware used to handle uploading files. Since I'm intending to allow users to give URLs or upload images to generate songs with PicMySong, I needed to figure out how to allow that on an endpoint which is how I discovered Multer.
 
-Aside from that, I was brought back yet again to a technology I saw when considering using Astro to make my blog-- Cloudinary. At first, I was planning to store the images in the MongoDB database directly, but online discussions like this thread from Reddit, [Do I need to use Cloudinary?](https://www.reddit.com/r/learnprogramming/comments/uc0jj2/do_i_need_to_use_cloudinary_in_order_to_store/ "") suggest using Cloudinary as it reduces the load on the database.
+Aside from that, I was brought back yet again to a technology I saw when considering using Astro to make my blog-- Cloudinary. At first, I was planning to store the images in the MongoDB database directly, but online discussions like this thread from Reddit, [Do I need to use Cloudinary?](https://www.reddit.com/r/learnprogramming/comments/uc0jj2/do_i_need_to_use_cloudinary_in_order_to_store/) suggest using Cloudinary as it reduces the load on the database.
 
 I also finally bit the bullet and chose to learn about the content management system, Tina, which is a Git-based CMS that is replacing another popular one called Forestry. I considered using the Netlify CMS, but since Netlify CMS requires you to deploy to Netlify to use it, I thought it'd be nice to have a little more freedom and thus I chose Tina.
 
@@ -37,7 +38,7 @@ In the end, I was pleasantly surprised by my experiencing trying to set up Tina,
 
 ## What are some things you're still curious about?
 
-I think in general, I've been feeling very eager to learn more about some of the recently popular JS technologies like Next.js and Vercel as a whole. Although I've decided to use Astro for my blog since I expect it to be pretty static, Next.js seems to be more common and popular so I briefly weighed the options. Given that Astro doesn't ship a website with any JS if it's not necessary, the final bundle is much smaller than a Next.js app according to posts like [Migrating from Next.js to Astro](https://johnzanussi.com/posts/nextjs-to-astro-migration "") from John Zanussi.
+I think in general, I've been feeling very eager to learn more about some of the recently popular JS technologies like Next.js and Vercel as a whole. Although I've decided to use Astro for my blog since I expect it to be pretty static, Next.js seems to be more common and popular so I briefly weighed the options. Given that Astro doesn't ship a website with any JS if it's not necessary, the final bundle is much smaller than a Next.js app according to posts like [Migrating from Next.js to Astro](https://johnzanussi.com/posts/nextjs-to-astro-migration) from John Zanussi.
 
 I'm sure I'll have time to revisit Next.js, but it has been nice getting familiar with these technologies.
 
