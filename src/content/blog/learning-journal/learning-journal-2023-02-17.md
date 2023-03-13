@@ -8,6 +8,7 @@ pubDate: '2023-02-17T08:00:00.000Z'
 heroImage: "/src/icons/notebook.svg"
 tags:
   - learning-journal
+draft: false
 ---
 
 ## What was your goal today? Did you accomplish it, and if not, what can you do differently next time?

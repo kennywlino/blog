@@ -51,13 +51,14 @@ const last_posts = posts.slice(0, 3);
       </div>
     </div>
 
-    <!-- <div>
-      <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
-    </div> -->
+    <div>
+      <div class="text-3xl w-full font-bold mb-2">My projects</div>
+    </div>
 
-    <!-- <HorizontalCard
+    <HorizontalCard
       title="Demo Project 1"
-      img="/post_img.webp"
+      img="src/icons/project.svg"
+      fillColor="primary"
       desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       url="#"
       badge="NEW"
@@ -65,22 +66,23 @@ const last_posts = posts.slice(0, 3);
     <div class="divider my-0"></div>
     <HorizontalCard
     title="Demo Project 2"
-    img="/post_img.webp"
+    img="src/icons/project.svg"
+    fillColor="primary"
     desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     url="#"
   />
     <div class="divider my-0"></div>
     <HorizontalCard
     title="Demo Project 3"
-    img="/post_img.webp"
+    img="src/icons/project.svg"
+    fillColor="primary"
     desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     url="#"
     badge="FOSS"
-  /> -->
-
+  />
 
     <div>
-      <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+      <div class="text-3xl w-full font-bold mb-5 mt-10">Latest blog posts</div>
     </div>
 
     {
@@ -88,6 +90,7 @@ const last_posts = posts.slice(0, 3);
         <HorizontalCard
           title={post.data.title}
           img={post.data.heroImage}
+          fillColor="primary"
           desc={post.data.description}
           url={"/blog/" + post.slug}
           target="_self"

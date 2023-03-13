@@ -28,7 +28,7 @@ if (heroImage) {
           {pubDate && <time>{displayDate}</time>}
         </div>
         {heroImageType !== '.svg' && <img id="hero-image" src={heroImage} alt={title} class="basis-1/3 w-24" />}
-        {heroImageType === '.svg' && <Icon name={heroImageName} class="basis-1/4 max-h-32 fill-secondary" />}
+        {heroImageType === '.svg' && <Icon name={heroImageName} class="basis-1/4 max-h-32 fill-primary" />}
       </div>
       {
         updatedDate && (

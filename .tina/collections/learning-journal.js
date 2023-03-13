@@ -11,6 +11,7 @@ const learningJournal = {
       heroImage: '/src/icons/notebook.svg',
       pubDate: new Date().toString(),
       tags: ['learning-journal'],
+      draft: false,
       body: {
         type: 'root',
         children: [

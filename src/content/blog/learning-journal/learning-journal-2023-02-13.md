@@ -7,6 +7,7 @@ pubDate: '2023-02-13T08:00:00.000Z'
 heroImage: /src/icons/notebook.svg
 tags:
   - learning-journal
+draft: false
 ---
 
 ## What was your goal today? (i.e . time spent studying, or improving certain skills) Did you accomplish it, and if not, what can you do differently next time?

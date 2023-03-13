@@ -7,12 +7,13 @@ pubDate: '2023-02-05T08:00:00.000Z'
 heroImage: /src/icons/notebook.svg
 tags:
   - learning-journal
+draft: false
 ---
 
 ## Links
 
-* [Codepen.io Navigation Bar from Design Course](https://codepen.io/kennywlino/pen/zYLbaOZ "")
-* [Codepen.io User Avatar from Design Course](https://codepen.io/kennywlino/pen/LYBaQQg "")
+* [Codepen.io Navigation Bar from Design Course](https://codepen.io/kennywlino/pen/zYLbaOZ)
+* [Codepen.io User Avatar from Design Course](https://codepen.io/kennywlino/pen/LYBaQQg)
 
 ## Questions
 
@@ -51,15 +52,15 @@ h1.main::before {
 
 ```
 
-I also skimmed through a video from Web Dev Simplified about [XState](https://youtu.be/s0h34OkEVUE ""), another tool for state management. It allows us to create finite state machines to define various states, such as logged in / logged out / error, and visualize them as such. This is in contrast to concepts like Redux or functional state hooks. I thought I'd watch this video as it mentioned that it makes state management easier, and because I wanted to know more about what the pros and cons are about various state management tools.
+I also skimmed through a video from Web Dev Simplified about [XState](https://youtu.be/s0h34OkEVUE), another tool for state management. It allows us to create finite state machines to define various states, such as logged in / logged out / error, and visualize them as such. This is in contrast to concepts like Redux or functional state hooks. I thought I'd watch this video as it mentioned that it makes state management easier, and because I wanted to know more about what the pros and cons are about various state management tools.
 
 ### What are some things you'd like to make special note of?
 
-One thing I'd like to make note of is something I learned from skimming Leon Noel's [One Project That Will Get You Hired](https://www.youtube.com/watch?v=zjxo_-wNZHE ""). In this video, he mentioned a couple of amazing tips to help get to our MVP faster, which include focusing on the functionality and the overall system over scaffolding the designs.
+One thing I'd like to make note of is something I learned from skimming Leon Noel's [One Project That Will Get You Hired](https://www.youtube.com/watch?v=zjxo_-wNZHE). In this video, he mentioned a couple of amazing tips to help get to our MVP faster, which include focusing on the functionality and the overall system over scaffolding the designs.
 
-A couple of useful hints he gave included using components from [Tailwind UI](https://tailwindui.com/ "")  as well as [Daisy UI](https://daisyui.com/ ""), which has free, open-source versions of components that may not be free. A search turned up [Tailwind UI Kit](https://tailwinduikit.com/ "") as well, which seems slightly different from Tailwind UI.
+A couple of useful hints he gave included using components from [Tailwind UI](https://tailwindui.com/)  as well as [Daisy UI](https://daisyui.com/), which has free, open-source versions of components that may not be free. A search turned up [Tailwind UI Kit](https://tailwinduikit.com/) as well, which seems slightly different from Tailwind UI.
 
-He also suggested checking out [Dribbble](https://dribbble.com/ "") or [Envato Elements](https://elements.envato.com/ "") for finding inspiration for layouts that have been created by designers and other professionals. For example, if we were trying to build a website for a gym, we could search that and find theming and layouts people have used for gym websites.
+He also suggested checking out [Dribbble](https://dribbble.com/) or [Envato Elements](https://elements.envato.com/) for finding inspiration for layouts that have been created by designers and other professionals. For example, if we were trying to build a website for a gym, we could search that and find theming and layouts people have used for gym websites.
 
 Although I heard the advice about focusing on function over form for building MVP and had been familiar with tools like Bootstrap, Material UI and Mantine, working with those tools also has their own quirks and ramp up before you can become effective with them, so I like the idea of Tailwind which seems more flexible.
 
@@ -67,7 +68,7 @@ Although I heard the advice about focusing on function over form for building MV
 
 I'm definitely still curious about the pros and cons of the various ways to manage state in our applications after watching the Web Dev Simplified video on XState. While it seems like libraries like Redux has gained popularity over the years, and React have tried to improve their state management over time by bringing in things like the useState and useReducer hooks and Context API to mimic Redux, state management isn't perfect.
 
-I saw this interesting discussion on Reddit about this topic titled [To Redux or not to Redux. To useReducer or useState](https://www.reddit.com/r/reactjs/comments/10uf6vf/to_redux_or_not_to_redux_to_usereducer_or_usestate/ "").
+I saw this interesting discussion on Reddit about this topic titled [To Redux or not to Redux. To useReducer or useState](https://www.reddit.com/r/reactjs/comments/10uf6vf/to_redux_or_not_to_redux_to_usereducer_or_usestate/).
 
 ### What do you plan to work on tomorrow?
 
