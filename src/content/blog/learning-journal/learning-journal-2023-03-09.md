@@ -5,14 +5,14 @@ description: >-
   interesting cross-browser compatibility issue with DaisyUI dropdown on iOS
   Safari.
 pubDate: '2023-03-10T07:24:09.000Z'
-heroImage: /assets/notebook.png
+heroImage: /src/icons/notebook.svg
 tags:
   - learning-journal
 ---
 
 ## What did you learn or work on today? How does it tie into your goals?
 
-Today, all of my attention went to tidying up this personal page since it's due time to share my progress with everyone! I worked on things like cleaning up the links on the sidebar to redirect to my own socials and did some resizing of the text and icons as it looked a tad small on mobile. I also had a full theme selector available originally courtesy of DaisyUI, but I chose to limit it to just a light/dark theme so the experience is more consistent for everyone. 
+Today, all of my attention went to tidying up this personal page since it's due time to share my progress with everyone! I worked on things like cleaning up the links on the sidebar to redirect to my own socials and did some resizing of the text and icons as it looked a tad small on mobile. I also had a full theme selector available originally courtesy of DaisyUI, but I chose to limit it to just a light/dark theme so the experience is more consistent for everyone.
 
 I also did some readjusting of the display of images with my learning journals as the original set-up was a full-size image for each page. Instead, I replaced them with just smaller icons of a notebook to better suit my own personal style.
 
