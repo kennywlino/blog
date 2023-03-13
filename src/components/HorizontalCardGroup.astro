@@ -1,6 +1,6 @@
 ---
 import HorizontalCard from "./HorizontalCard.astro";
-const { data, fillColor } = Astro.props;
+const { data, collection, fillColor } = Astro.props;
 ---
 
 <ul>
@@ -12,7 +12,7 @@ const { data, fillColor } = Astro.props;
           img={post.data.heroImage}
           fillColor={fillColor}
           desc={post.data.description}
-          url={"/blog/" + post.slug}
+          url={`/${collection}/${post.slug}`}
           target="_self"
         />
         <div class="divider my-0" />

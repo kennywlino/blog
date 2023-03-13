@@ -54,7 +54,7 @@ const latest_posts = posts.slice(0, 3);
       </div>
     </div>
 
-    <div>
+    <!-- <div>
       <div class="text-3xl w-full font-bold mb-2">My projects</div>
     </div>
 
@@ -82,7 +82,7 @@ const latest_posts = posts.slice(0, 3);
     desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     url="#"
     badge="FOSS"
-  />
+  /> -->
 
     <div>
       <div class="text-3xl w-full font-bold mb-5 mt-10">Latest blog posts</div>
@@ -91,6 +91,7 @@ const latest_posts = posts.slice(0, 3);
     {
      <HorizontalCardGroup 
         data={latest_posts}
+        collection="blog"
         fillColor="primary"
      /> 
     }
