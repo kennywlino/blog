@@ -1,14 +1,22 @@
 ---
+import { Icon } from 'astro-icon';
 import { BlogSchema } from "../content/config";
 import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import path from "path";
 
 export interface Props extends BlogSchema {}
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll");
+let heroImageName;
+let heroImageType;
+if (heroImage) {
+  heroImageName = path.parse(heroImage).name;
+  heroImageType = path.parse(heroImage).ext;
+}
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}>
@@ -19,7 +27,8 @@ const displayDate = dayjs(pubDate).format("ll");
           <h1 class="title my-2 text-4xl font-bold">{title}</h1>
           {pubDate && <time>{displayDate}</time>}
         </div>
-        {heroImage && <img id="hero-image" src={heroImage} alt={title} class="w-24" />}
+        {heroImageType !== '.svg' && <img id="hero-image" src={heroImage} alt={title} class="w-24" />}
+        {heroImageType === '.svg' && <Icon name={heroImageName} class="max-h-32 fill-primary" />}
       </div>
       {
         updatedDate && (

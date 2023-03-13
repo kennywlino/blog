@@ -5,7 +5,7 @@ description: >-
   of stories for behavioral interviews, questions for future interviews and list
   of companies I'm targeting.
 pubDate: '2023-02-20T08:00:00.000Z'
-heroImage: "/assets/notebook.png"
+heroImage: "/src/icons/notebook.svg"
 tags:
   - learning-journal
 ---
