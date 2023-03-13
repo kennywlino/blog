@@ -1,8 +1,10 @@
 ---
 title: Learning Journal - 2023/03/06
-description: Summary of top 2-3 topics today.
+description: >-
+  Purchased and set-up my first domain ever. Reorganized PicMySong back-end
+  code. Ran into and fixed a new bug with TinaCMS for personal page.
 pubDate: '2023-03-06T08:00:00.000Z'
-heroImage: "/src/icons/notebook.svg"
+heroImage: /src/icons/notebook.svg
 tags:
   - learning-journal
 ---
