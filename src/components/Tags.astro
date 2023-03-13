@@ -9,14 +9,14 @@ const { selected } = Astro.props;
     tags.map((tag) => {
       if (tag === selected) {
         return (
-          <div class="btn btn-sm btn-secondary m-2 hover:btn-ghost">
+          <div class="btn btn-sm btn-primary m-2 hover:btn-ghost">
             <a href={`/tags/${tag}`}>{tag}</a>
           </div>
         );
       }
       else {
         return (
-          <div class="btn btn-sm m-2 hover:btn-secondary">
+          <div class="btn btn-sm m-2 hover:btn-primary">
             <a href={`/tags/${tag}`}>{tag}</a>
           </div>
         );

@@ -1,8 +1,10 @@
 ---
 title: Learning Journal - 2023/02/27
-description: Summary of top 2-3 topics today.
+description: >-
+  Implemented tagging system within Astro personal page. Fixed issue with Astro
+  params not working by reading documentation more closely.
 pubDate: '2023-02-27T08:00:00.000Z'
-heroImage: "/src/icons/notebook.svg"
+heroImage: /src/icons/notebook.svg
 tags:
   - learning-journal
 ---
