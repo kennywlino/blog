@@ -4,7 +4,7 @@ description: >-
   Began Three.js Journey course. Worked on PicMySong front-end with focus on
   displaying results. Found some bugs in personal page thanks to my friends.
 pubDate: '2023-03-07T08:00:00.000Z'
-heroImage: "/assets/notebook.png"
+heroImage: "/src/icons/notebook.svg"
 tags:
   - learning-journal
 ---

@@ -4,7 +4,7 @@ description: >-
   Got personal website in working condition. Set-up endpoint to handle image
   upload with Multer on PicMySong back-end.
 pubDate: '2023-03-01T08:00:00.000Z'
-heroImage: "/assets/notebook.png"
+heroImage: "/src/icons/notebook.svg"
 tags:
   - learning-journal
 ---
