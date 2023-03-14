@@ -1,6 +1,8 @@
 ---
 title: Learning Journal - 2023/03/13
-description: Summary of top 2-3 topics today.
+description: >-
+  SVG heavy day. Ran into trouble with SVGs. Learned about SVGR and similar
+  packages that create components from SVG. Looked into how to animate SVGs.
 pubDate: '2023-03-14T01:01:03.000Z'
 heroImage: /src/icons/notebook.svg
 tags:
@@ -26,7 +28,7 @@ I knew that animated SVG was possible, but it never quite clicked to me that it 
 
 ## What are some things you're still curious about?
 
-Running into this issue with figuring out the best way to work with SVGs, especially if I want to have styling control over them, made me curious about other quirks about JavaScript and web development that are out there. In the end, the solution to my problem of changing SVGs into React components ended up being very handy, but it was a bit of a pain to finally get to the solution. 
+Running into this issue with figuring out the best way to work with SVGs, especially if I want to have styling control over them, made me curious about other quirks about JavaScript and web development that are out there. In the end, the solution to my problem of changing SVGs into React components ended up being very handy, but it was a bit of a pain to finally get to the solution.
 
 I considered a number of hacky ways including switching over to  .png files and creating a dark version and light version and having a variable that would load the correct version, but in the end I chose to figure out the bigger problem.
 
@@ -36,6 +38,6 @@ Hopefully running into these issues now has helped me prepare for other similar 
 
 ## What do you plan to work on tomorrow?
 
-The past few days, I think my main goal has been to complete the set-up for this personal page and PicMySong, but it has certainly been challenging to lockdown how much time I need to finish everything, especially since everything just takes longer than it seems. However, I think it's safe to say that the only thing really left for my personal page is to upload my projects. 
+The past few days, I think my main goal has been to complete the set-up for this personal page and PicMySong, but it has certainly been challenging to lockdown how much time I need to finish everything, especially since everything just takes longer than it seems. However, I think it's safe to say that the only thing really left for my personal page is to upload my projects.
 
 Originally, I planned to highlight just PicMySong once I wrapped it up, but I realized that it's also important to share some of the other projects I've worked on along the way, so I'd like to find time to do some polishing on some older projects from my bootcamp and add them to my portfolio as well.
