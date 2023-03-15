@@ -5,8 +5,12 @@ pubDate: '2023-03-15T04:51:40.000Z'
 heroImage: /src/icons/notebook.svg
 tags:
   - learning-journal
-draft: true
+draft: false
 ---
+
+## Links
+
+[PicMySong: Latest Updates](https://pic-my-song-client-oaw0lrkm5-kennywlino.vercel.app/ "")
 
 ## What did you learn or work on today? How does it tie into your goals?
 
@@ -32,6 +36,6 @@ As a full-stack developer, I think I'm getting much better at styling and making
 
 ## What do you plan to work on tomorrow?
 
-Tomorrow, I'd like to get closer to wrapping up PicMySong. Today, I was able to see a concrete MVP by using the data I had saved from a previous Spotify call, so tomorrow all that's left to do functionality-wise is to confirm that I can use an image to search and get results to display. From there, there's a few enhancements I'd like to work on which including making the file upload component a proper drop zone-- in other words, getting the drag-and-drop upload to work. I'd also like to add the option for using an image URL as well, but that will also require some changes on the back-end to properly wire everything up. 
+Tomorrow, I'd like to get closer to wrapping up PicMySong. Today, I was able to see a concrete MVP by using the data I had saved from a previous Spotify call, so tomorrow all that's left to do functionality-wise is to confirm that I can use an image to search and get results to display. From there, there's a few enhancements I'd like to work on which including making the file upload component a proper drop zone-- in other words, getting the drag-and-drop upload to work. I'd also like to add the option for using an image URL as well, but that will also require some changes on the back-end to properly wire everything up.
 
 From there, I think I could take a look at the hero icons again and see if I can style and animate them exactly how I want them. I'd also like to consider the final layout and decide whether I think a 3-panel scroll snap with Hero - Search - Results is best or change it somehow so that Search is hidden when there are Results, etc.
