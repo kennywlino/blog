@@ -1,6 +1,8 @@
 ---
 title: Learning Journal - 2023/03/14
-description: Summary of top 2-3 topics today.
+description: >-
+  Looked into transitions/animations for hero icons. Set up the Results
+  component display with mock data from previous Spotify API calls.
 pubDate: '2023-03-15T04:51:40.000Z'
 heroImage: /src/icons/notebook.svg
 tags:
