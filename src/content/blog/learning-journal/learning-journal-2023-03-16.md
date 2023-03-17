@@ -1,6 +1,9 @@
 ---
 title: Learning Journal - 2023/03/16
-description: Summary of top 2-3 topics today.
+description: >-
+  Fixed some TypeScript errors preventing deployment for PicMySong. Worked on
+  writing up a blog post/README for PicMySong. Considered ways to improve
+  general image-to-song process.
 pubDate: '2023-03-17T01:22:57.000Z'
 heroImage: /src/icons/notebook.svg
 tags:
@@ -24,7 +27,7 @@ At first I thought about looking for a tool that could provide links to songs on
 
 ## What are some things you're still curious about?
 
-After getting PicMySong to a good state, I think something I'm getting more curious about getting back into is more complex back-ends. With PicMySong, since I chose to forego adding CRUD functionality and users since that wasn't the focus, my Express server ended up being quite simple. I would like to see if there's a way I can leverage some of the older projects I worked on such as a Bug Tracker app I was working on with my classmates as I've started to see that building from scratch even with help from libraries is generally time-consuming. 
+After getting PicMySong to a good state, I think something I'm getting more curious about getting back into is more complex back-ends. With PicMySong, since I chose to forego adding CRUD functionality and users since that wasn't the focus, my Express server ended up being quite simple. I would like to see if there's a way I can leverage some of the older projects I worked on such as a Bug Tracker app I was working on with my classmates as I've started to see that building from scratch even with help from libraries is generally time-consuming.
 
 Another thing that I became slightly curious about recently, which is using serverless functions in place of a separate Express server. I was looking at the Vercel documentation when I was deploying my server for PicMySong as I wanted to know if I could keep everything on Vercel. However, from what I could find in [their documentation](https://vercel.com/guides/using-express-with-vercel ""), Vercel really advocates for serverless functions although they do offer ways to deploy Express servers. Since their set-up was slightly unconventional from what I'm used to, I just deployed it via Render.  At the end of the day, the functionality of the app would be the same so it would be more for convenience's sake, but I would love to see how it changes my developer's experience.
 
