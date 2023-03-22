@@ -22,8 +22,8 @@ Something that I want to make special note of is the concept of ["Yak Shaving"](
 
 The concept of "Yak Shaving" essentially points to the idea of "going down the rabbit hole" or getting distracted by other related tasks. An example they give in the article I linked above related to coding is that our main task is to fix a bug. However, as we start to take a look at the code, maybe we notice our code needs to be refactored a bit. In fact, they should be refactored and organized into different files! And like that, we can continue to derail ourselves from our original goal. 
 
-I wanted to make note of this concept as although it's not a unique concept, it helped me remind myself to stay focused on my MVP. This issue with the backend needing time to load is a perfect example as I never originally intended to pursue serverless functions. I believe the Reddit discussion I saw 
-
-## What are some things you're still curious about?
+I wanted to make note of this concept as although it's not a unique concept, it helped me remind myself to stay focused on my MVP for PicMySong. This issue with the backend needing time to load is a perfect example as I never originally intended to pursue serverless functions. The Reddit discussion also was helpful to read, as the original poster was lamenting how hard it was to build a portfolio as they needed to spend time learning Figma, animations, responsive layouts, etc. that they felt like they would never finish. I've shared similar feelings at certain points where it feels like it's a never ending amount of things to learn, but I also try to remember that I have a choice in learning what I do, so if I don't enjoy it, I deprioritize it.
 
 ## What do you plan to work on tomorrow?
+
+I plan on figuring out what I want to do regarding the Render server needing time to start up before someone can use PicMySong. 
