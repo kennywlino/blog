@@ -2,7 +2,7 @@
 title: Learning Journal - 2023/03/17
 description: >-
   Looked into serverless functions to fix issue with free back-end services that
-  need start-up time.
+  need start-up time. Learned about the concept of "Yak Shaving".
 pubDate: '2023-03-17T19:48:38.000Z'
 heroImage: /src/icons/notebook.svg
 tags:
@@ -18,9 +18,11 @@ I ran into this after I tried to show a friend how PicMySong worked and then thi
 
 ## What are some things you'd like to make special note of?
 
-Something that I want to make special note of is the concept of ["Yak Shaving"](https://americanexpress.io/yak-shaving/). I saw it mentioned in a comment in a subreddit like /r/cscareerquestions when someone was asking for advice re: their portfolio or just general career advice.
+Something that I want to make special note of is the concept of ["Yak Shaving"](https://americanexpress.io/yak-shaving/ ""). I saw it mentioned in a comment in the /r/webdev subreddit when someone was asking for advice [re: their portfolio](https://www.reddit.com/r/webdev/comments/11txn1h/comment/jcm5j2t/).
 
-The concept of "Yak Shaving" essentially points to the idea of "going down the rabbit hole". 
+The concept of "Yak Shaving" essentially points to the idea of "going down the rabbit hole" or getting distracted by other related tasks. An example they give in the article I linked above related to coding is that our main task is to fix a bug. However, as we start to take a look at the code, maybe we notice our code needs to be refactored a bit. In fact, they should be refactored and organized into different files! And like that, we can continue to derail ourselves from our original goal. 
+
+I wanted to make note of this concept as although it's not a unique concept, it helped me remind myself to stay focused on my MVP. This issue with the backend needing time to load is a perfect example as I never originally intended to pursue serverless functions. I believe the Reddit discussion I saw 
 
 ## What are some things you're still curious about?
 
