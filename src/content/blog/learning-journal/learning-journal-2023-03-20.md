@@ -5,7 +5,7 @@ pubDate: '2023-03-20T07:00:00.000Z'
 heroImage: /src/icons/notebook.svg
 tags:
   - learning-journal
-draft: true
+draft: false
 ---
 
 ## What did you learn or work on today? How does it tie into your goals?
