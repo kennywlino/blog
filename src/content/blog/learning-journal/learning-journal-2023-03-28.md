@@ -10,13 +10,32 @@ tags:
 draft: false
 ---
 
+## Links
+
+* [Three.js Journey - 3D Text: Kenny](https://3d-text-kenny.vercel.app/)
+* Three.js Journey - Haunted House
+* Three.js Journey - Galaxy Generator
+* Three.js Journey - Scroll-based Animation
+
 ## What did you learn or work on today? How does it tie into your goals?
 
 Recently, I've diverted my attention from PicMySong to working on Bruno Simon's Three.js Journey course.  
 
 This was a course I purchased late last year around Black Friday I believe, because there was a great deal going on. I have to say though, I have been completely sucked in by this course! In the past week, I've completed both Chapter 1 where we cover the basics, and Chapter 2 where we cover classic techniques. Together, the videos total to about 16 hours of content! 
 
-Before I go into more detail, I should describe what Three.js does. Three.js is a JavaScript 3D library that allows us to render via WebGL. If that doesn't make sense, feel free to click [this link](https://3d-text-kenny.vercel.app/), as they say, a picture is a worth a 1000 words! 
+Before I go into more detail, I should describe what Three.js does. Three.js is a JavaScript 3D library that allows us to render via WebGL. If that doesn't make sense, feel free to click one of the links above as they say, a picture is a worth a 1000 words! Compiling all of the projects together like this, it's crazy to see how many fun things I've created with Three.js already thanks to Bruno Simon!
+
+Since I'm also trying to describe what I learned not just today but within the last week, there's actually quite a lot to be said. However, I'll try to keep it as compact as possible.
+
+In order to create a Three.js scene, we do everything via the HTML canvas. 
+
+Within a scene, we can have objects or geometries like a cube, a cone, a plane which can combine with materials that can take on features like roughness or metalness to create a single object called a mesh. 
+
+We can also add lights to our scene, which come in a variety of forms much like the lights we have in real life. Those include ambient light which is the general light we have around us, directional light which mimics the sun beating down on us, and hemisphere light which can simulate a sunset like dual-tone style of light. 
+
+Finally, we need a camera to actual observe the scene. We can adjust the camera much like cameras in real life, including its field of depth, its distance, etc. This will change the perspective of the objects in the scene. By combining these elements, we can get a full scene and call our renderer to tell the GPU to make calculations and display. 
+
+There's definitely more details within the course content that I'm sure I glossed over, but I hope the links give a great idea of what I've learned so far.
 
 ## What are some things you'd like to make special note of?
 
