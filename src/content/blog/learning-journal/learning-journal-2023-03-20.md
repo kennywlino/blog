@@ -1,6 +1,8 @@
 ---
 title: Learning Journal - 2023/03/20
-description: Summary of top 2-3 topics today.
+description: >-
+  Added a component to show the status of the server. Updated styling within the
+  results section to utilize the space better and be more mobile-friendly.
 pubDate: '2023-03-20T07:00:00.000Z'
 heroImage: /src/icons/notebook.svg
 tags:
@@ -22,7 +24,7 @@ On the back-end, I modified a bit of the image-to-songs functionality to test ho
 
 ## What are some things you'd like to make special note of?
 
-The yak shaving concept I learned about on Friday really helped me avoid putting in unnecessary time into serverless functions. Although I would love to eventually get to working with them, it just didn't feel necessary to include it at this time. 
+The yak shaving concept I learned about on Friday really helped me avoid putting in unnecessary time into serverless functions. Although I would love to eventually get to working with them, it just didn't feel necessary to include it at this time.
 
 ## What do you plan to work on tomorrow?
 
