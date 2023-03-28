@@ -15,7 +15,7 @@ draft: false
 * [Three.js Journey - 3D Text: Kenny](https://3d-text-jo7o1b1ow-kennywlino.vercel.app/ "")
 * [Three.js Journey - Haunted House](https://haunted-house-nk5ds8ivh-kennywlino.vercel.app/ "")
 * [Three.js Journey - Galaxy Generator](https://galaxy-generator-395f6cacp-kennywlino.vercel.app/ "")
-* Three.js Journey - Scroll-based Animation(https://scroll-based-animation-jeliwp5q6-kennywlino.vercel.app/)
+* [Three.js Journey - Scroll-based Animation](https://scroll-based-animation-jeliwp5q6-kennywlino.vercel.app/ "")
 
 ## What did you learn or work on today? How does it tie into your goals?
 
@@ -49,4 +49,8 @@ Comparing that to some of the other things I had in mind like learning TypeScrip
 
 ## What are some things you're still curious about?
 
+We've used GSAP, aka the GreenSock Animation Platform's package to animate certain elements like in the scroll-based animation project. In that project, when we scroll down to each individual section, the shapes do a quick spin. I've heard a lot about GSAP, especially in the past when I was considering spending time how do do more exciting things in the front-end, but I never had a chance to delve into it as I prioritized getting more familiar with web development in general. Now that it's come back, I'd like to take a look at how robust it is as it seems to be quite powerful. I'd also like to take time to compare that with Framer Motion as I believe that's another recent but popular library for animation.
+
 ## What do you plan to work on tomorrow?
+
+Tomorrow, I plan on continuing to work on Three.js Journey by working on the Advanced Techniques section and learning about how to incorporate physics into our scene. I'd also like to personalize the projects that I've made with Bruno so far, but I'm hoping to get through the course and get to the ReactThreeFiber section where we talk about how to use React with Three.js. Since I've enjoyed using React to be able to simply organize my code more sensibly, I'm hoping ReactThreeFiber will add a lot of value once I get there. 
